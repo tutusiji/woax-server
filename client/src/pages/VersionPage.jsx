@@ -188,7 +188,7 @@ const VersionPage = () => {
 
   return (
     <div>
-      <Card>
+      <Card className="shadow-xl ">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
           <Title level={2}>版本更新管理</Title>
           <Button type="primary" onClick={() => setIsUploadModalVisible(true)}>发布新版本</Button>

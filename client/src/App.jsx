@@ -5,9 +5,9 @@ import { DatabaseOutlined, CommentOutlined, CloudUploadOutlined } from '@ant-des
 import logo from './assets/logo.png';
 
 // 导入页面组件
-import ReportPage from './pages/ReportPage';
-import FeedbackPage from './pages/FeedbackPage';
-import VersionPage from './pages/VersionPage';
+import ReportPage from './pages/ReportPage.jsx';
+import FeedbackPage from './pages/FeedbackPage.jsx';
+import VersionPage from './pages/VersionPage.jsx';
 
 const { Header, Content, Footer } = Layout;
 

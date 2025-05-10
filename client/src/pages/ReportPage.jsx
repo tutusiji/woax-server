@@ -93,7 +93,7 @@ const ReportPage = () => {
 
   return (
     <div>
-      <Card>
+      <Card className="shadow-xl ">
         <Title level={2}>数据上报记录</Title>
         <Table 
           columns={columns} 
