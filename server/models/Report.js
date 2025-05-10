@@ -1,35 +1,16 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const reportSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-    trim: true
+const reportSchema = new mongoose.Schema(
+  {
+    username: { type: String, required: true },
+    ip: String,
+    timestamp: { type: Date, default: Date.now },
+    version: String,
+    remark: String,
+    deviceInfo: String,
+    // ...如有其它字段...
   },
-  ip: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  timestamp: {
-    type: Date,
-    default: Date.now
-  },
-  userAgent: {
-    type: String,
-    trim: true
-  },
-  deviceInfo: {
-    type: String,
-    trim: true
-  },
-  location: {
-    type: String,
-    trim: true
-  },
-  additionalData: {
-    type: mongoose.Schema.Types.Mixed
-  }
-}, { timestamps: true });
+  { collection: "statistics" }
+);
 
-module.exports = mongoose.model('Report', reportSchema);
+module.exports = mongoose.model("Report", reportSchema);

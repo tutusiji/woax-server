@@ -67,7 +67,12 @@ router.get("/:id", async (ctx) => {
 // 提交新的意见反馈
 router.post("/", async (ctx) => {
   try {
-    const { username, content, email, ip } = ctx.request.body;
+    let { username, content, email, ip } = ctx.request.body;
+    // 去除字符串字段两端空格
+    username = typeof username === "string" ? username.trim() : username;
+    content = typeof content === "string" ? content.trim() : content;
+    email = typeof email === "string" ? email.trim() : email;
+    ip = typeof ip === "string" ? ip.trim() : ip;
 
     // 创建新的意见反馈
     const newFeedback = new Feedback({
@@ -99,21 +104,25 @@ router.post("/", async (ctx) => {
 // 更新意见反馈状态
 router.put("/:id", async (ctx) => {
   try {
-    const { status, replyInput } = ctx.request.body;
+    let { status, replyInput } = ctx.request.body;
+    // 去除字符串字段两端空格
+    status = typeof status === "string" ? status.trim() : status;
+    replyInput =
+      typeof replyInput === "string" ? replyInput.trim() : replyInput;
 
     // 构建更新对象
     const updateObj = {};
     if (status) updateObj.status = status;
-    if (typeof replyInput === "string" && replyInput.trim()) {
+    if (typeof replyInput === "string" && replyInput) {
       // 追加到回复记录
       updateObj.$push = {
         replyHistory: {
-          content: replyInput.trim(),
+          content: replyInput,
           time: new Date(),
           admin: ctx.state.user?.username || "管理员",
         },
       };
-      updateObj.replyInput = replyInput.trim(); // 可选：保留最新输入
+      updateObj.replyInput = replyInput; // 可选：保留最新输入
     }
 
     // 如果没有回复，只更新状态

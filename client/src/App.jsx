@@ -5,7 +5,7 @@ import { DatabaseOutlined, CommentOutlined, CloudUploadOutlined } from '@ant-des
 import logo from './assets/logo.png';
 
 // 导入页面组件
-import ReportPage from './pages/ReportPage.jsx';
+import ReportPage from './pages/StatisticPage/index.jsx';
 import FeedbackPage from './pages/FeedbackPage.jsx';
 import VersionPage from './pages/VersionPage.jsx';
 
@@ -19,7 +19,7 @@ function App() {
     const path = location.pathname;
     if (path.startsWith('/feedback')) return ['2'];
     if (path.startsWith('/version')) return ['3'];
-    return ['1']; // 默认选中数据上报
+    return ['1']; // 默认选中数据统计
   };
 
   return (
@@ -34,7 +34,7 @@ function App() {
             {
               key: '1',
               icon: <DatabaseOutlined />,
-              label: <Link to="/">数据上报</Link>,
+              label: <Link to="/">数据统计</Link>,
             },
             {
               key: '2',
