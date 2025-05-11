@@ -27,7 +27,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         // additionalData ：允许您在每个 Sass 文件的开头自动注入一些内容，比如变量、混合器或函数的导入语句
-        additionalData: `@import "./src/styles/variables.scss";`
+        // additionalData: `@import "./src/styles/variables.scss";`
       },
     },
   },

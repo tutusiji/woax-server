@@ -12,6 +12,7 @@ const reportRoutes = require('./routes/report');
 const feedbackRoutes = require('./routes/feedback');
 const versionRoutes = require('./routes/version');
 const projectRoutes = require('./routes/project');
+const adminRoutes = require('./routes/admin');
 
 // 创建Koa应用实例
 const app = new Koa();
@@ -48,6 +49,7 @@ router.use('/api/report', reportRoutes.routes());
 router.use('/api/feedback', feedbackRoutes.routes());
 router.use('/api/version', versionRoutes.routes());
 router.use('/api/projects', projectRoutes.routes());
+router.use('/api/admin', adminRoutes.routes());
 
 // 注册路由
 app.use(router.routes()).use(router.allowedMethods());

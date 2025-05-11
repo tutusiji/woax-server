@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Layout, Menu, Dropdown, Button, Modal, Input, message, Space } from 'antd';
+import { Layout, Menu, Dropdown, Button, Modal, Input, message, Space, Avatar } from 'antd';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { DatabaseOutlined, CommentOutlined, CloudUploadOutlined, DownOutlined, PlusOutlined } from '@ant-design/icons';
+import { DatabaseOutlined, CommentOutlined, CloudUploadOutlined, DownOutlined, PlusOutlined, UserOutlined, LogoutOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import logo from './assets/logo.png';
 
@@ -10,9 +10,56 @@ import ReportPage from './pages/StatisticPage/index.jsx';
 import FeedbackPage from './pages/FeedbackPage.jsx';
 import VersionPage from './pages/VersionPage.jsx';
 
+// 导入认证上下文
+import { AuthProvider, AuthContext } from './context/AuthContext';
+
 const { Header, Content, Footer } = Layout;
 
-function App() {
+// 添加请求拦截器，自动添加认证令牌
+axios.interceptors.request.use(config => {
+  const token = localStorage.getItem('adminToken');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+// 用户信息组件
+const UserInfo = () => {
+  const { isAuthenticated, adminUsername, handleLogout, showLoginModal } = React.useContext(AuthContext);
+
+  const userMenu = {
+    items: [
+      {
+        key: 'logout',
+        icon: <LogoutOutlined />,
+        label: '退出登录',
+        onClick: handleLogout
+      }
+    ]
+  };
+
+  return (
+    <div style={{ marginLeft: '20px' }}>
+      {isAuthenticated ? (
+        <Dropdown menu={userMenu} trigger={['click']}>
+          <Button type="text" style={{ color: '#fff' }}>
+            <Space>
+              <Avatar icon={<UserOutlined />} size="small" />
+              {adminUsername}
+            </Space>
+          </Button>
+        </Dropdown>
+      ) : (
+        <Button type="primary" ghost onClick={showLoginModal}>
+          管理员登录
+        </Button>
+      )}
+    </div>
+  );
+};
+
+function AppContent() {
   const location = useLocation();
   const [projects, setProjects] = useState([]);
   const [currentProject, setCurrentProject] = useState(null);
@@ -115,7 +162,7 @@ function App() {
         
         {/* 项目下拉列表 */}
         <Dropdown menu={projectMenu} trigger={['click']}>
-          <Button style={{ marginRight: '20px' }}>
+          <Button className='w-[160px] mr-[20px] border-none bg-transparent text-[#fff]'>
             <Space>
               {currentProject?.name || '选择项目'}
               <DownOutlined />
@@ -156,6 +203,9 @@ function App() {
         >
           项目管理
         </Button>
+
+        {/* 用户信息/登录按钮 */}
+        <UserInfo />
       </Header>
       
       <Content style={{ padding: '0 50px' }}>
@@ -189,6 +239,14 @@ function App() {
         WoaX ©{new Date().getFullYear()} Created with React & Ant Design
       </Footer>
     </Layout>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 

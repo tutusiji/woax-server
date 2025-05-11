@@ -5,6 +5,7 @@ import ChartPanel from './ChartPanel';
 import DataTable from './DataTable';
 import ReportFormModal from './ReportFormModal';
 import ReportModal from './ReportModal';
+import AuthButton from '../../components/AuthButton';
 
 const { Title } = Typography;
 
@@ -200,7 +201,13 @@ const StatisticPage = ({ currentProject }) => {
       <Card>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
           <Title level={4} style={{ margin: 0 }}>数据统计</Title>
-          <Button type="primary" onClick={handleOpenReportModal}>自主上报</Button>
+          <AuthButton 
+            type="primary" 
+            onClick={handleOpenReportModal}
+            tooltip="需要管理员权限才能进行自主上报"
+          >
+            自主上报
+          </AuthButton>
         </div>
         <Row gutter={[16, 16]} style={{ marginBottom: '20px' }}>
           <Col span={8}>

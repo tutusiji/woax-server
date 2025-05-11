@@ -1,0 +1,3254 @@
+[{
+  "_id": {
+    "$oid": "681fa884349b0f05c76a25b7"
+  },
+  "username": "dev213",
+  "ip": "223.113.197.0",
+  "timestamp": {
+    "$date": "2025-04-14T19:27:00.669Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Opera",
+  "location": "成都",
+  "version": "v2.1.1",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "登录",
+    "status": "已取消",
+    "duration": 734,
+    "timestamp": "2025-04-14T19:27:00.669Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:00.747Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:00.747Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa884349b0f05c76a25b9"
+  },
+  "username": "dev694",
+  "ip": "125.201.211.55",
+  "timestamp": {
+    "$date": "2025-04-27T19:27:00.868Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Edge",
+  "location": "北京",
+  "version": "v2.1.5",
+  "remark": "功能验证",
+  "additionalData": {
+    "feature": "登录",
+    "status": "已取消",
+    "duration": 295,
+    "timestamp": "2025-04-27T19:27:00.868Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:00.871Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:00.871Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa884349b0f05c76a25bb"
+  },
+  "username": "admin924",
+  "ip": "164.28.163.162",
+  "timestamp": {
+    "$date": "2025-05-05T19:27:00.976Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Opera",
+  "location": "上海",
+  "version": "v3.4.9",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "已取消",
+    "duration": 781,
+    "timestamp": "2025-05-05T19:27:00.976Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:00.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:00.978Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa885349b0f05c76a25bd"
+  },
+  "username": "dev213",
+  "ip": "125.150.116.202",
+  "timestamp": {
+    "$date": "2025-04-26T19:27:01.086Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Opera",
+  "location": "深圳",
+  "version": "v1.9.0",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "已取消",
+    "duration": 510,
+    "timestamp": "2025-04-26T19:27:01.086Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:01.088Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:01.088Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa885349b0f05c76a25bf"
+  },
+  "username": "user510",
+  "ip": "21.11.62.110",
+  "timestamp": {
+    "$date": "2025-04-28T19:27:01.195Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Firefox",
+  "location": "成都",
+  "version": "v1.9.0",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "上传",
+    "status": "已完成",
+    "duration": 373,
+    "timestamp": "2025-04-28T19:27:01.195Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:01.198Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:01.198Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa885349b0f05c76a25c1"
+  },
+  "username": "admin708",
+  "ip": "202.40.80.73",
+  "timestamp": {
+    "$date": "2025-04-26T19:27:01.303Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Firefox",
+  "location": "北京",
+  "version": "v1.9.0",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "搜索",
+    "status": "失败",
+    "duration": 546,
+    "timestamp": "2025-04-26T19:27:01.303Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:01.306Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:01.306Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa885349b0f05c76a25c3"
+  },
+  "username": "admin446",
+  "ip": "191.11.152.90",
+  "timestamp": {
+    "$date": "2025-04-21T19:27:01.411Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Chrome",
+  "location": "成都",
+  "version": "v5.5.2",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "上传",
+    "status": "失败",
+    "duration": 676,
+    "timestamp": "2025-04-21T19:27:01.411Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:01.414Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:01.414Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa885349b0f05c76a25c5"
+  },
+  "username": "dev213",
+  "ip": "94.200.82.109",
+  "timestamp": {
+    "$date": "2025-04-27T19:27:01.521Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Opera",
+  "location": "西安",
+  "version": "v5.6.6",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "已取消",
+    "duration": 774,
+    "timestamp": "2025-04-27T19:27:01.521Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:01.523Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:01.523Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa885349b0f05c76a25c7"
+  },
+  "username": "test875",
+  "ip": "51.229.59.14",
+  "timestamp": {
+    "$date": "2025-05-07T19:27:01.629Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Safari",
+  "location": "西安",
+  "version": "v2.7.7",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "下载",
+    "status": "成功",
+    "duration": 198,
+    "timestamp": "2025-05-07T19:27:01.629Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:01.632Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:01.632Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa885349b0f05c76a25c9"
+  },
+  "username": "test173",
+  "ip": "100.207.134.100",
+  "timestamp": {
+    "$date": "2025-05-04T19:27:01.738Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Edge",
+  "location": "杭州",
+  "version": "v2.7.7",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "注册",
+    "status": "已完成",
+    "duration": 378,
+    "timestamp": "2025-05-04T19:27:01.738Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:01.740Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:01.740Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa885349b0f05c76a25cb"
+  },
+  "username": "guest711",
+  "ip": "135.82.139.152",
+  "timestamp": {
+    "$date": "2025-05-07T19:27:01.847Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Chrome",
+  "location": "南京",
+  "version": "v3.9.0",
+  "remark": "测试数据",
+  "additionalData": {
+    "feature": "浏览",
+    "status": "进行中",
+    "duration": 856,
+    "timestamp": "2025-05-07T19:27:01.847Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:01.849Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:01.849Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa885349b0f05c76a25cd"
+  },
+  "username": "test875",
+  "ip": "243.9.206.218",
+  "timestamp": {
+    "$date": "2025-05-08T19:27:01.955Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Edge",
+  "location": "西安",
+  "version": "v2.2.2",
+  "remark": "兼容性测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "失败",
+    "duration": 266,
+    "timestamp": "2025-05-08T19:27:01.955Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:01.957Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:01.957Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa886349b0f05c76a25cf"
+  },
+  "username": "guest528",
+  "ip": "166.33.110.244",
+  "timestamp": {
+    "$date": "2025-04-26T19:27:02.063Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Edge",
+  "location": "重庆",
+  "version": "v2.6.0",
+  "remark": "系统测试",
+  "additionalData": {
+    "feature": "搜索",
+    "status": "已完成",
+    "duration": 592,
+    "timestamp": "2025-04-26T19:27:02.063Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:02.065Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:02.065Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa886349b0f05c76a25d1"
+  },
+  "username": "测试用户123",
+  "ip": "210.149.25.126",
+  "timestamp": {
+    "$date": "2025-04-15T19:27:02.172Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Safari",
+  "location": "广州",
+  "version": "v2.7.7",
+  "remark": "功能验证",
+  "additionalData": {
+    "feature": "下载",
+    "status": "失败",
+    "duration": 710,
+    "timestamp": "2025-04-15T19:27:02.172Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:02.174Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:02.174Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa886349b0f05c76a25d3"
+  },
+  "username": "admin916",
+  "ip": "101.106.121.6",
+  "timestamp": {
+    "$date": "2025-05-01T19:27:02.278Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Edge",
+  "location": "上海",
+  "version": "v4.9.8",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "登录",
+    "status": "已完成",
+    "duration": 346,
+    "timestamp": "2025-05-01T19:27:02.278Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:02.281Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:02.281Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa886349b0f05c76a25d5"
+  },
+  "username": "guest91",
+  "ip": "119.68.197.75",
+  "timestamp": {
+    "$date": "2025-04-16T19:27:02.387Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Edge",
+  "location": "杭州",
+  "version": "v3.0.6",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "登录",
+    "status": "成功",
+    "duration": 831,
+    "timestamp": "2025-04-16T19:27:02.387Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:02.389Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:02.389Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa886349b0f05c76a25d7"
+  },
+  "username": "dev742",
+  "ip": "83.161.89.174",
+  "timestamp": {
+    "$date": "2025-04-22T19:27:02.497Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Safari",
+  "location": "武汉",
+  "version": "v5.5.0",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "注册",
+    "status": "已取消",
+    "duration": 591,
+    "timestamp": "2025-04-22T19:27:02.497Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:02.499Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:02.499Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa886349b0f05c76a25d9"
+  },
+  "username": "dev570",
+  "ip": "0.14.245.234",
+  "timestamp": {
+    "$date": "2025-05-03T19:27:02.606Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Chrome",
+  "location": "重庆",
+  "version": "v1.1.9",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "浏览",
+    "status": "进行中",
+    "duration": 671,
+    "timestamp": "2025-05-03T19:27:02.606Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:02.608Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:02.608Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa886349b0f05c76a25db"
+  },
+  "username": "dev227",
+  "ip": "27.174.245.218",
+  "timestamp": {
+    "$date": "2025-04-30T19:27:02.713Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Edge",
+  "location": "上海",
+  "version": "v4.2.8",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "浏览",
+    "status": "进行中",
+    "duration": 240,
+    "timestamp": "2025-04-30T19:27:02.713Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:02.715Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:02.715Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa886349b0f05c76a25dd"
+  },
+  "username": "guest423",
+  "ip": "45.153.239.98",
+  "timestamp": {
+    "$date": "2025-04-19T19:27:02.821Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Firefox",
+  "location": "北京",
+  "version": "v4.2.8",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "登录",
+    "status": "已完成",
+    "duration": 38,
+    "timestamp": "2025-04-19T19:27:02.821Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:02.823Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:02.823Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa886349b0f05c76a25df"
+  },
+  "username": "test447",
+  "ip": "193.165.202.76",
+  "timestamp": {
+    "$date": "2025-04-22T19:27:02.930Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Edge",
+  "location": "杭州",
+  "version": "v4.2.8",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "搜索",
+    "status": "已取消",
+    "duration": 406,
+    "timestamp": "2025-04-22T19:27:02.930Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:02.932Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:02.932Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa887349b0f05c76a25e1"
+  },
+  "username": "guest471",
+  "ip": "165.55.56.80",
+  "timestamp": {
+    "$date": "2025-04-17T19:27:03.038Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Opera",
+  "location": "上海",
+  "version": "v2.0.0",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "上传",
+    "status": "成功",
+    "duration": 778,
+    "timestamp": "2025-04-17T19:27:03.038Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:03.042Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:03.042Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa887349b0f05c76a25e3"
+  },
+  "username": "user795",
+  "ip": "192.210.216.199",
+  "timestamp": {
+    "$date": "2025-04-14T19:27:03.148Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Opera",
+  "location": "上海",
+  "version": "v3.2.0",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "搜索",
+    "status": "成功",
+    "duration": 699,
+    "timestamp": "2025-04-14T19:27:03.148Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:03.149Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:03.149Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa887349b0f05c76a25e5"
+  },
+  "username": "user491",
+  "ip": "115.187.223.76",
+  "timestamp": {
+    "$date": "2025-04-14T19:27:03.256Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Chrome",
+  "location": "北京",
+  "version": "v4.8.7",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "分享",
+    "status": "已取消",
+    "duration": 860,
+    "timestamp": "2025-04-14T19:27:03.256Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:03.258Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:03.258Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa887349b0f05c76a25e7"
+  },
+  "username": "测试用户123",
+  "ip": "252.98.109.0",
+  "timestamp": {
+    "$date": "2025-04-29T19:27:03.364Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Firefox",
+  "location": "西安",
+  "version": "v4.7.8",
+  "remark": "兼容性测试",
+  "additionalData": {
+    "feature": "注册",
+    "status": "已完成",
+    "duration": 684,
+    "timestamp": "2025-04-29T19:27:03.364Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:03.366Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:03.366Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa887349b0f05c76a25e9"
+  },
+  "username": "user744",
+  "ip": "97.147.142.147",
+  "timestamp": {
+    "$date": "2025-05-10T19:27:03.473Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Firefox",
+  "location": "广州",
+  "version": "v4.2.8",
+  "remark": "兼容性测试",
+  "additionalData": {
+    "feature": "搜索",
+    "status": "进行中",
+    "duration": 953,
+    "timestamp": "2025-05-10T19:27:03.473Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:03.475Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:03.475Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa887349b0f05c76a25eb"
+  },
+  "username": "guest310",
+  "ip": "215.66.160.118",
+  "timestamp": {
+    "$date": "2025-04-29T19:27:03.582Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Firefox",
+  "location": "武汉",
+  "version": "v4.2.8",
+  "remark": "系统测试",
+  "additionalData": {
+    "feature": "下载",
+    "status": "已完成",
+    "duration": 275,
+    "timestamp": "2025-04-29T19:27:03.582Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:03.584Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:03.584Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa887349b0f05c76a25ed"
+  },
+  "username": "测试用户123",
+  "ip": "185.126.136.213",
+  "timestamp": {
+    "$date": "2025-05-01T19:27:03.691Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Chrome",
+  "location": "北京",
+  "version": "v3.1.8",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "浏览",
+    "status": "成功",
+    "duration": 575,
+    "timestamp": "2025-05-01T19:27:03.691Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:03.693Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:03.693Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa887349b0f05c76a25ef"
+  },
+  "username": "dev883",
+  "ip": "0.86.140.27",
+  "timestamp": {
+    "$date": "2025-04-16T19:27:03.801Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Edge",
+  "location": "深圳",
+  "version": "v4.0.0",
+  "remark": "兼容性测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "已取消",
+    "duration": 609,
+    "timestamp": "2025-04-16T19:27:03.801Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:03.803Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:03.803Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa887349b0f05c76a25f1"
+  },
+  "username": "admin631",
+  "ip": "53.206.6.67",
+  "timestamp": {
+    "$date": "2025-05-01T19:27:03.909Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Chrome",
+  "location": "北京",
+  "version": "v2.6.1",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "购买",
+    "status": "失败",
+    "duration": 515,
+    "timestamp": "2025-05-01T19:27:03.909Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:03.911Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:03.911Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa888349b0f05c76a25f3"
+  },
+  "username": "test494",
+  "ip": "129.189.118.103",
+  "timestamp": {
+    "$date": "2025-04-22T19:27:04.018Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Opera",
+  "location": "重庆",
+  "version": "v5.5.9",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "注册",
+    "status": "进行中",
+    "duration": 963,
+    "timestamp": "2025-04-22T19:27:04.018Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:04.020Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:04.020Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa888349b0f05c76a25f5"
+  },
+  "username": "user932",
+  "ip": "45.253.169.213",
+  "timestamp": {
+    "$date": "2025-05-04T19:27:04.127Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Opera",
+  "location": "南京",
+  "version": "v1.3.4",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "进行中",
+    "duration": 197,
+    "timestamp": "2025-05-04T19:27:04.127Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:04.129Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:04.129Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa888349b0f05c76a25f7"
+  },
+  "username": "user400",
+  "ip": "169.126.18.116",
+  "timestamp": {
+    "$date": "2025-04-30T19:27:04.236Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Chrome",
+  "location": "南京",
+  "version": "v2.8.8",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "已取消",
+    "duration": 360,
+    "timestamp": "2025-04-30T19:27:04.236Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:04.238Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:04.238Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa888349b0f05c76a25f9"
+  },
+  "username": "admin663",
+  "ip": "69.209.157.90",
+  "timestamp": {
+    "$date": "2025-05-07T19:27:04.344Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Chrome",
+  "location": "深圳",
+  "version": "v4.6.5",
+  "remark": "系统测试",
+  "additionalData": {
+    "feature": "搜索",
+    "status": "已取消",
+    "duration": 631,
+    "timestamp": "2025-05-07T19:27:04.344Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:04.346Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:04.346Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa888349b0f05c76a25fb"
+  },
+  "username": "test258",
+  "ip": "40.193.241.133",
+  "timestamp": {
+    "$date": "2025-04-14T19:27:04.452Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Safari",
+  "location": "杭州",
+  "version": "v3.6.0",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "购买",
+    "status": "进行中",
+    "duration": 631,
+    "timestamp": "2025-04-14T19:27:04.452Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:04.453Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:04.453Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa888349b0f05c76a25fd"
+  },
+  "username": "admin343",
+  "ip": "195.117.161.0",
+  "timestamp": {
+    "$date": "2025-04-12T19:27:04.557Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Safari",
+  "location": "深圳",
+  "version": "v4.1.4",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "注册",
+    "status": "已取消",
+    "duration": 414,
+    "timestamp": "2025-04-12T19:27:04.557Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:04.559Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:04.559Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa888349b0f05c76a25ff"
+  },
+  "username": "user382",
+  "ip": "252.67.115.15",
+  "timestamp": {
+    "$date": "2025-04-24T19:27:04.664Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Opera",
+  "location": "重庆",
+  "version": "v5.1.7",
+  "remark": "兼容性测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "进行中",
+    "duration": 999,
+    "timestamp": "2025-04-24T19:27:04.664Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:04.666Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:04.666Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa888349b0f05c76a2601"
+  },
+  "username": "user124",
+  "ip": "173.98.176.132",
+  "timestamp": {
+    "$date": "2025-04-15T19:27:04.773Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Safari",
+  "location": "南京",
+  "version": "v3.5.2",
+  "remark": "系统测试",
+  "additionalData": {
+    "feature": "购买",
+    "status": "失败",
+    "duration": 578,
+    "timestamp": "2025-04-15T19:27:04.773Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:04.775Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:04.775Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa888349b0f05c76a2603"
+  },
+  "username": "guest310",
+  "ip": "158.69.71.100",
+  "timestamp": {
+    "$date": "2025-04-27T19:27:04.879Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Safari",
+  "location": "武汉",
+  "version": "v2.6.4",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "分享",
+    "status": "进行中",
+    "duration": 466,
+    "timestamp": "2025-04-27T19:27:04.879Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:04.881Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:04.881Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa888349b0f05c76a2605"
+  },
+  "username": "admin373",
+  "ip": "161.68.248.39",
+  "timestamp": {
+    "$date": "2025-04-17T19:27:04.986Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Opera",
+  "location": "上海",
+  "version": "v5.0.5",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "已完成",
+    "duration": 982,
+    "timestamp": "2025-04-17T19:27:04.986Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:04.989Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:04.989Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa889349b0f05c76a2607"
+  },
+  "username": "dev213",
+  "ip": "181.34.165.113",
+  "timestamp": {
+    "$date": "2025-04-30T19:27:05.095Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Safari",
+  "location": "深圳",
+  "version": "v3.4.9",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "评论",
+    "status": "成功",
+    "duration": 809,
+    "timestamp": "2025-04-30T19:27:05.095Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:05.097Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:05.097Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa889349b0f05c76a2609"
+  },
+  "username": "user530",
+  "ip": "220.12.136.202",
+  "timestamp": {
+    "$date": "2025-04-21T19:27:05.202Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Opera",
+  "location": "西安",
+  "version": "v3.0.5",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "分享",
+    "status": "进行中",
+    "duration": 628,
+    "timestamp": "2025-04-21T19:27:05.202Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:05.204Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:05.204Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa889349b0f05c76a260b"
+  },
+  "username": "admin445",
+  "ip": "126.241.3.205",
+  "timestamp": {
+    "$date": "2025-04-29T19:27:05.309Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Safari",
+  "location": "杭州",
+  "version": "v3.4.6",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "搜索",
+    "status": "失败",
+    "duration": 655,
+    "timestamp": "2025-04-29T19:27:05.309Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:05.310Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:05.310Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa889349b0f05c76a260d"
+  },
+  "username": "user644",
+  "ip": "142.53.48.80",
+  "timestamp": {
+    "$date": "2025-04-25T19:27:05.418Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Chrome",
+  "location": "上海",
+  "version": "v2.9.5",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "注册",
+    "status": "失败",
+    "duration": 318,
+    "timestamp": "2025-04-25T19:27:05.418Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:05.420Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:05.420Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa889349b0f05c76a260f"
+  },
+  "username": "test503",
+  "ip": "70.178.143.229",
+  "timestamp": {
+    "$date": "2025-04-19T19:27:05.528Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Firefox",
+  "location": "西安",
+  "version": "v5.0.7",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "分享",
+    "status": "已完成",
+    "duration": 577,
+    "timestamp": "2025-04-19T19:27:05.528Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:05.531Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:05.531Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa889349b0f05c76a2611"
+  },
+  "username": "user414",
+  "ip": "164.13.100.184",
+  "timestamp": {
+    "$date": "2025-04-22T19:27:05.637Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Opera",
+  "location": "成都",
+  "version": "v2.0.7",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "注册",
+    "status": "成功",
+    "duration": 241,
+    "timestamp": "2025-04-22T19:27:05.637Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:05.639Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:05.639Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa889349b0f05c76a2613"
+  },
+  "username": "test632",
+  "ip": "217.72.200.118",
+  "timestamp": {
+    "$date": "2025-05-09T19:27:05.746Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Edge",
+  "location": "武汉",
+  "version": "v4.4.0",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "注册",
+    "status": "进行中",
+    "duration": 137,
+    "timestamp": "2025-05-09T19:27:05.746Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:05.748Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:05.748Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa889349b0f05c76a2615"
+  },
+  "username": "guest451",
+  "ip": "51.148.175.118",
+  "timestamp": {
+    "$date": "2025-04-14T19:27:05.855Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Safari",
+  "location": "杭州",
+  "version": "v5.7.0",
+  "remark": "系统测试",
+  "additionalData": {
+    "feature": "分享",
+    "status": "失败",
+    "duration": 823,
+    "timestamp": "2025-04-14T19:27:05.855Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:05.857Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:05.857Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa889349b0f05c76a2617"
+  },
+  "username": "dev830",
+  "ip": "111.68.94.122",
+  "timestamp": {
+    "$date": "2025-05-01T19:27:05.963Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Opera",
+  "location": "成都",
+  "version": "v4.3.6",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "搜索",
+    "status": "失败",
+    "duration": 216,
+    "timestamp": "2025-05-01T19:27:05.963Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:05.965Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:05.965Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88a349b0f05c76a2619"
+  },
+  "username": "user639",
+  "ip": "99.200.76.37",
+  "timestamp": {
+    "$date": "2025-05-01T19:27:06.072Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Chrome",
+  "location": "杭州",
+  "version": "v5.8.7",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "失败",
+    "duration": 268,
+    "timestamp": "2025-05-01T19:27:06.072Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:06.074Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:06.074Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88a349b0f05c76a261d"
+  },
+  "username": "guest579",
+  "ip": "130.137.76.41",
+  "timestamp": {
+    "$date": "2025-04-22T19:27:06.289Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Opera",
+  "location": "上海",
+  "version": "v2.8.6",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "浏览",
+    "status": "失败",
+    "duration": 449,
+    "timestamp": "2025-04-22T19:27:06.289Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:06.291Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:06.291Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88a349b0f05c76a261f"
+  },
+  "username": "test190",
+  "ip": "51.129.155.175",
+  "timestamp": {
+    "$date": "2025-05-04T19:27:06.396Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Edge",
+  "location": "成都",
+  "version": "v4.6.1",
+  "remark": "功能验证",
+  "additionalData": {
+    "feature": "评论",
+    "status": "失败",
+    "duration": 408,
+    "timestamp": "2025-05-04T19:27:06.396Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:06.399Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:06.399Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88a349b0f05c76a2621"
+  },
+  "username": "dev118",
+  "ip": "172.170.140.152",
+  "timestamp": {
+    "$date": "2025-05-08T19:27:06.505Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Edge",
+  "location": "杭州",
+  "version": "v2.0.5",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "上传",
+    "status": "失败",
+    "duration": 359,
+    "timestamp": "2025-05-08T19:27:06.505Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:06.507Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:06.507Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88a349b0f05c76a2623"
+  },
+  "username": "admin420",
+  "ip": "163.164.136.235",
+  "timestamp": {
+    "$date": "2025-05-08T19:27:06.614Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Firefox",
+  "location": "西安",
+  "version": "v5.2.8",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "已取消",
+    "duration": 330,
+    "timestamp": "2025-05-08T19:27:06.614Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:06.615Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:06.615Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88a349b0f05c76a2625"
+  },
+  "username": "dev775",
+  "ip": "36.237.218.171",
+  "timestamp": {
+    "$date": "2025-05-01T19:27:06.723Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Safari",
+  "location": "北京",
+  "version": "v4.2.9",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "评论",
+    "status": "已取消",
+    "duration": 30,
+    "timestamp": "2025-05-01T19:27:06.723Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:06.725Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:06.725Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88a349b0f05c76a2627"
+  },
+  "username": "test499",
+  "ip": "104.10.218.20",
+  "timestamp": {
+    "$date": "2025-05-04T19:27:06.831Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Edge",
+  "location": "重庆",
+  "version": "v5.3.9",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "评论",
+    "status": "成功",
+    "duration": 461,
+    "timestamp": "2025-05-04T19:27:06.831Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:06.833Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:06.833Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88a349b0f05c76a2629"
+  },
+  "username": "guest728",
+  "ip": "77.42.228.166",
+  "timestamp": {
+    "$date": "2025-04-11T19:27:06.939Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Safari",
+  "location": "广州",
+  "version": "v1.1.7",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "已完成",
+    "duration": 37,
+    "timestamp": "2025-04-11T19:27:06.939Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:06.941Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:06.941Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88b349b0f05c76a262b"
+  },
+  "username": "user673",
+  "ip": "20.211.33.28",
+  "timestamp": {
+    "$date": "2025-04-23T19:27:07.047Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Edge",
+  "location": "广州",
+  "version": "v1.7.7",
+  "remark": "测试数据",
+  "additionalData": {
+    "feature": "登录",
+    "status": "进行中",
+    "duration": 443,
+    "timestamp": "2025-04-23T19:27:07.047Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:07.049Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:07.049Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88b349b0f05c76a262d"
+  },
+  "username": "user584",
+  "ip": "117.48.28.223",
+  "timestamp": {
+    "$date": "2025-04-16T19:27:07.156Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Safari",
+  "location": "北京",
+  "version": "v5.7.8",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "购买",
+    "status": "已完成",
+    "duration": 341,
+    "timestamp": "2025-04-16T19:27:07.156Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:07.157Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:07.157Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88b349b0f05c76a262f"
+  },
+  "username": "user928",
+  "ip": "55.228.2.57",
+  "timestamp": {
+    "$date": "2025-04-12T19:27:07.262Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Chrome",
+  "location": "武汉",
+  "version": "v2.3.5",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "购买",
+    "status": "成功",
+    "duration": 405,
+    "timestamp": "2025-04-12T19:27:07.262Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:07.264Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:07.264Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88b349b0f05c76a2631"
+  },
+  "username": "guest38",
+  "ip": "63.156.49.228",
+  "timestamp": {
+    "$date": "2025-04-27T19:27:07.371Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Edge",
+  "location": "杭州",
+  "version": "v2.1.8",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "浏览",
+    "status": "已完成",
+    "duration": 775,
+    "timestamp": "2025-04-27T19:27:07.371Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:07.373Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:07.373Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88b349b0f05c76a2633"
+  },
+  "username": "guest565",
+  "ip": "132.221.187.171",
+  "timestamp": {
+    "$date": "2025-04-20T19:27:07.478Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Opera",
+  "location": "武汉",
+  "version": "v4.1.9",
+  "remark": "兼容性测试",
+  "additionalData": {
+    "feature": "下载",
+    "status": "已完成",
+    "duration": 123,
+    "timestamp": "2025-04-20T19:27:07.478Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:07.480Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:07.480Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88b349b0f05c76a2635"
+  },
+  "username": "dev509",
+  "ip": "93.69.119.231",
+  "timestamp": {
+    "$date": "2025-05-06T19:27:07.588Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Opera",
+  "location": "深圳",
+  "version": "v4.4.9",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "登录",
+    "status": "已完成",
+    "duration": 487,
+    "timestamp": "2025-05-06T19:27:07.588Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:07.590Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:07.590Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88b349b0f05c76a2637"
+  },
+  "username": "dev195",
+  "ip": "46.152.106.251",
+  "timestamp": {
+    "$date": "2025-04-22T19:27:07.697Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Safari",
+  "location": "成都",
+  "version": "v4.0.6",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "登录",
+    "status": "进行中",
+    "duration": 360,
+    "timestamp": "2025-04-22T19:27:07.697Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:07.699Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:07.699Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88b349b0f05c76a2639"
+  },
+  "username": "admin180",
+  "ip": "240.190.33.62",
+  "timestamp": {
+    "$date": "2025-04-30T19:27:07.805Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Edge",
+  "location": "重庆",
+  "version": "v5.3.1",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "下载",
+    "status": "失败",
+    "duration": 718,
+    "timestamp": "2025-04-30T19:27:07.805Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:07.807Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:07.807Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88b349b0f05c76a263b"
+  },
+  "username": "dev225",
+  "ip": "149.194.194.65",
+  "timestamp": {
+    "$date": "2025-04-28T19:27:07.914Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Chrome",
+  "location": "重庆",
+  "version": "v1.1.0",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "评论",
+    "status": "成功",
+    "duration": 818,
+    "timestamp": "2025-04-28T19:27:07.914Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:07.916Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:07.916Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88c349b0f05c76a263d"
+  },
+  "username": "admin866",
+  "ip": "59.247.56.219",
+  "timestamp": {
+    "$date": "2025-05-06T19:27:08.023Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Safari",
+  "location": "上海",
+  "version": "v3.2.5",
+  "remark": "系统测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "成功",
+    "duration": 234,
+    "timestamp": "2025-05-06T19:27:08.023Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:08.025Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:08.025Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88c349b0f05c76a263f"
+  },
+  "username": "test910",
+  "ip": "75.125.17.36",
+  "timestamp": {
+    "$date": "2025-04-26T19:27:08.132Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Firefox",
+  "location": "深圳",
+  "version": "v3.7.1",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "登录",
+    "status": "失败",
+    "duration": 246,
+    "timestamp": "2025-04-26T19:27:08.132Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:08.134Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:08.134Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88c349b0f05c76a2641"
+  },
+  "username": "guest424",
+  "ip": "209.193.146.84",
+  "timestamp": {
+    "$date": "2025-04-19T19:27:08.240Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Opera",
+  "location": "北京",
+  "version": "v5.7.0",
+  "remark": "系统测试",
+  "additionalData": {
+    "feature": "注册",
+    "status": "已取消",
+    "duration": 247,
+    "timestamp": "2025-04-19T19:27:08.240Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:08.242Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:08.242Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88c349b0f05c76a2643"
+  },
+  "username": "dev559",
+  "ip": "68.66.60.249",
+  "timestamp": {
+    "$date": "2025-04-20T19:27:08.350Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Firefox",
+  "location": "成都",
+  "version": "v5.4.8",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "购买",
+    "status": "进行中",
+    "duration": 236,
+    "timestamp": "2025-04-20T19:27:08.350Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:08.352Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:08.352Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88c349b0f05c76a2645"
+  },
+  "username": "guest752",
+  "ip": "150.247.77.206",
+  "timestamp": {
+    "$date": "2025-05-08T19:27:08.459Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Firefox",
+  "location": "杭州",
+  "version": "v3.2.7",
+  "remark": "测试数据",
+  "additionalData": {
+    "feature": "评论",
+    "status": "进行中",
+    "duration": 198,
+    "timestamp": "2025-05-08T19:27:08.459Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:08.461Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:08.461Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88c349b0f05c76a2647"
+  },
+  "username": "guest429",
+  "ip": "220.32.102.82",
+  "timestamp": {
+    "$date": "2025-04-16T19:27:08.566Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Safari",
+  "location": "广州",
+  "version": "v4.0.3",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "登录",
+    "status": "已完成",
+    "duration": 71,
+    "timestamp": "2025-04-16T19:27:08.566Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:08.568Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:08.568Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88c349b0f05c76a2649"
+  },
+  "username": "admin562",
+  "ip": "149.164.173.186",
+  "timestamp": {
+    "$date": "2025-04-23T19:27:08.674Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Edge",
+  "location": "北京",
+  "version": "v3.7.8",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "下载",
+    "status": "失败",
+    "duration": 27,
+    "timestamp": "2025-04-23T19:27:08.674Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:08.676Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:08.676Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88c349b0f05c76a264b"
+  },
+  "username": "dev373",
+  "ip": "26.47.9.104",
+  "timestamp": {
+    "$date": "2025-04-21T19:27:08.783Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Edge",
+  "location": "重庆",
+  "version": "v4.0.7",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "购买",
+    "status": "成功",
+    "duration": 272,
+    "timestamp": "2025-04-21T19:27:08.783Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:08.785Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:08.785Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88c349b0f05c76a264d"
+  },
+  "username": "guest386",
+  "ip": "253.196.171.163",
+  "timestamp": {
+    "$date": "2025-05-03T19:27:08.892Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Opera",
+  "location": "西安",
+  "version": "v3.6.1",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "下载",
+    "status": "已完成",
+    "duration": 369,
+    "timestamp": "2025-05-03T19:27:08.892Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:08.894Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:08.894Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88d349b0f05c76a264f"
+  },
+  "username": "guest29",
+  "ip": "249.33.36.58",
+  "timestamp": {
+    "$date": "2025-04-19T19:27:09.001Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Chrome",
+  "location": "杭州",
+  "version": "v3.7.3",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "下载",
+    "status": "已完成",
+    "duration": 112,
+    "timestamp": "2025-04-19T19:27:09.001Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:09.003Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:09.003Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88d349b0f05c76a2651"
+  },
+  "username": "admin474",
+  "ip": "220.150.198.15",
+  "timestamp": {
+    "$date": "2025-05-06T19:27:09.110Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Opera",
+  "location": "杭州",
+  "version": "v4.2.9",
+  "remark": "测试数据",
+  "additionalData": {
+    "feature": "上传",
+    "status": "失败",
+    "duration": 48,
+    "timestamp": "2025-05-06T19:27:09.110Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:09.113Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:09.113Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88d349b0f05c76a2653"
+  },
+  "username": "admin385",
+  "ip": "41.44.241.16",
+  "timestamp": {
+    "$date": "2025-05-06T19:27:09.217Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Firefox",
+  "location": "重庆",
+  "version": "v4.5.3",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "上传",
+    "status": "失败",
+    "duration": 781,
+    "timestamp": "2025-05-06T19:27:09.217Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:09.219Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:09.219Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88d349b0f05c76a2655"
+  },
+  "username": "user330",
+  "ip": "178.29.18.105",
+  "timestamp": {
+    "$date": "2025-05-07T19:27:09.324Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Edge",
+  "location": "西安",
+  "version": "v2.7.5",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "购买",
+    "status": "进行中",
+    "duration": 713,
+    "timestamp": "2025-05-07T19:27:09.324Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:09.327Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:09.327Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88d349b0f05c76a2657"
+  },
+  "username": "guest759",
+  "ip": "196.38.175.52",
+  "timestamp": {
+    "$date": "2025-04-14T19:27:09.431Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Edge",
+  "location": "广州",
+  "version": "v3.8.0",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "下载",
+    "status": "失败",
+    "duration": 565,
+    "timestamp": "2025-04-14T19:27:09.431Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:09.434Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:09.434Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88d349b0f05c76a2659"
+  },
+  "username": "guest541",
+  "ip": "75.101.64.59",
+  "timestamp": {
+    "$date": "2025-04-20T19:27:09.539Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Opera",
+  "location": "武汉",
+  "version": "v4.7.7",
+  "remark": "压力测试",
+  "additionalData": {
+    "feature": "登录",
+    "status": "已取消",
+    "duration": 986,
+    "timestamp": "2025-04-20T19:27:09.539Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:09.541Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:09.541Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88d349b0f05c76a265b"
+  },
+  "username": "test830",
+  "ip": "12.247.253.93",
+  "timestamp": {
+    "$date": "2025-04-30T19:27:09.645Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Opera",
+  "location": "南京",
+  "version": "v2.1.6",
+  "remark": "功能验证",
+  "additionalData": {
+    "feature": "浏览",
+    "status": "成功",
+    "duration": 606,
+    "timestamp": "2025-04-30T19:27:09.645Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:09.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:09.647Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88d349b0f05c76a265d"
+  },
+  "username": "admin448",
+  "ip": "206.164.231.39",
+  "timestamp": {
+    "$date": "2025-04-18T19:27:09.751Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Chrome",
+  "location": "南京",
+  "version": "v3.6.9",
+  "remark": "兼容性测试",
+  "additionalData": {
+    "feature": "购买",
+    "status": "成功",
+    "duration": 844,
+    "timestamp": "2025-04-18T19:27:09.751Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:09.754Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:09.754Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88d349b0f05c76a265f"
+  },
+  "username": "user664",
+  "ip": "5.242.120.241",
+  "timestamp": {
+    "$date": "2025-04-15T19:27:09.859Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Safari",
+  "location": "广州",
+  "version": "v5.1.0",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "注册",
+    "status": "已完成",
+    "duration": 603,
+    "timestamp": "2025-04-15T19:27:09.859Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:09.861Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:09.861Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88d349b0f05c76a2661"
+  },
+  "username": "test256",
+  "ip": "49.95.106.210",
+  "timestamp": {
+    "$date": "2025-04-17T19:27:09.968Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Firefox",
+  "location": "成都",
+  "version": "v5.4.9",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "上传",
+    "status": "进行中",
+    "duration": 717,
+    "timestamp": "2025-04-17T19:27:09.968Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:09.970Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:09.970Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88e349b0f05c76a2663"
+  },
+  "username": "admin3",
+  "ip": "47.86.153.210",
+  "timestamp": {
+    "$date": "2025-04-20T19:27:10.077Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Edge",
+  "location": "重庆",
+  "version": "v2.5.0",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "评论",
+    "status": "已取消",
+    "duration": 798,
+    "timestamp": "2025-04-20T19:27:10.077Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:10.079Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:10.079Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88e349b0f05c76a2665"
+  },
+  "username": "test166",
+  "ip": "173.200.187.240",
+  "timestamp": {
+    "$date": "2025-04-28T19:27:10.186Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Firefox",
+  "location": "深圳",
+  "version": "v4.6.0",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "登录",
+    "status": "进行中",
+    "duration": 161,
+    "timestamp": "2025-04-28T19:27:10.186Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:10.188Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:10.188Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88e349b0f05c76a2667"
+  },
+  "username": "user484",
+  "ip": "103.115.102.117",
+  "timestamp": {
+    "$date": "2025-05-03T19:27:10.295Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Chrome",
+  "location": "广州",
+  "version": "v2.8.3",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "已完成",
+    "duration": 800,
+    "timestamp": "2025-05-03T19:27:10.295Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:10.296Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:10.296Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88e349b0f05c76a2669"
+  },
+  "username": "dev35",
+  "ip": "109.113.174.224",
+  "timestamp": {
+    "$date": "2025-04-21T19:27:10.404Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Safari",
+  "location": "广州",
+  "version": "v3.6.7",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "浏览",
+    "status": "成功",
+    "duration": 649,
+    "timestamp": "2025-04-21T19:27:10.404Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:10.406Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:10.406Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88e349b0f05c76a266b"
+  },
+  "username": "dev526",
+  "ip": "130.212.55.13",
+  "timestamp": {
+    "$date": "2025-04-11T19:27:10.513Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Edge",
+  "location": "北京",
+  "version": "v5.0.1",
+  "remark": "模拟用户行为",
+  "additionalData": {
+    "feature": "购买",
+    "status": "已取消",
+    "duration": 531,
+    "timestamp": "2025-04-11T19:27:10.513Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:10.515Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:10.515Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88e349b0f05c76a266d"
+  },
+  "username": "guest389",
+  "ip": "109.187.14.85",
+  "timestamp": {
+    "$date": "2025-04-24T19:27:10.620Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Chrome",
+  "location": "北京",
+  "version": "v2.2.9",
+  "remark": "安全测试",
+  "additionalData": {
+    "feature": "注册",
+    "status": "已取消",
+    "duration": 951,
+    "timestamp": "2025-04-24T19:27:10.620Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:10.622Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:10.622Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88e349b0f05c76a266f"
+  },
+  "username": "guest988",
+  "ip": "164.136.98.129",
+  "timestamp": {
+    "$date": "2025-05-04T19:27:10.730Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "iOS - Chrome",
+  "location": "西安",
+  "version": "v3.2.7",
+  "remark": "兼容性测试",
+  "additionalData": {
+    "feature": "收藏",
+    "status": "已完成",
+    "duration": 281,
+    "timestamp": "2025-05-04T19:27:10.730Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:10.732Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:10.732Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88e349b0f05c76a2671"
+  },
+  "username": "dev61",
+  "ip": "109.8.255.185",
+  "timestamp": {
+    "$date": "2025-04-21T19:27:10.839Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Android - Chrome",
+  "location": "成都",
+  "version": "v5.4.4",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "登录",
+    "status": "成功",
+    "duration": 255,
+    "timestamp": "2025-04-21T19:27:10.839Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:10.841Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:10.841Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88e349b0f05c76a2673"
+  },
+  "username": "user50",
+  "ip": "162.40.89.17",
+  "timestamp": {
+    "$date": "2025-05-08T19:27:10.946Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Chrome",
+  "location": "重庆",
+  "version": "v4.8.3",
+  "remark": "系统测试",
+  "additionalData": {
+    "feature": "浏览",
+    "status": "已完成",
+    "duration": 708,
+    "timestamp": "2025-05-08T19:27:10.946Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:10.948Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:10.948Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88f349b0f05c76a2675"
+  },
+  "username": "guest706",
+  "ip": "131.30.236.15",
+  "timestamp": {
+    "$date": "2025-04-18T19:27:11.053Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Opera",
+  "location": "上海",
+  "version": "v5.9.5",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "评论",
+    "status": "失败",
+    "duration": 79,
+    "timestamp": "2025-04-18T19:27:11.053Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:11.055Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:11.055Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88f349b0f05c76a2677"
+  },
+  "username": "guest845",
+  "ip": "16.97.12.143",
+  "timestamp": {
+    "$date": "2025-04-18T19:27:11.161Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Opera",
+  "location": "西安",
+  "version": "v1.0.2",
+  "remark": "自动生成的记录",
+  "additionalData": {
+    "feature": "评论",
+    "status": "已取消",
+    "duration": 742,
+    "timestamp": "2025-04-18T19:27:11.161Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:11.163Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:11.163Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88f349b0f05c76a2679"
+  },
+  "username": "guest615",
+  "ip": "222.226.89.141",
+  "timestamp": {
+    "$date": "2025-04-14T19:27:11.267Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Linux - Chrome",
+  "location": "武汉",
+  "version": "v5.3.3",
+  "remark": "性能测试",
+  "additionalData": {
+    "feature": "分享",
+    "status": "已取消",
+    "duration": 336,
+    "timestamp": "2025-04-14T19:27:11.267Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:11.270Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:11.270Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88f349b0f05c76a267b"
+  },
+  "username": "dev697",
+  "ip": "214.172.240.117",
+  "timestamp": {
+    "$date": "2025-05-09T19:27:11.378Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "Windows - Opera",
+  "location": "武汉",
+  "version": "v3.5.3",
+  "remark": "系统测试",
+  "additionalData": {
+    "feature": "购买",
+    "status": "失败",
+    "duration": 622,
+    "timestamp": "2025-05-09T19:27:11.378Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:11.380Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:11.380Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa88f349b0f05c76a267d"
+  },
+  "username": "dev668",
+  "ip": "177.50.240.197",
+  "timestamp": {
+    "$date": "2025-04-19T19:27:11.486Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "deviceInfo": "MacOS - Edge",
+  "location": "杭州",
+  "version": "v5.3.9",
+  "remark": "用户体验测试",
+  "additionalData": {
+    "feature": "分享",
+    "status": "成功",
+    "duration": 926,
+    "timestamp": "2025-04-19T19:27:11.486Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:27:11.489Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:11.489Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fa8b3349b0f05c76a2681"
+  },
+  "username": "ffffff",
+  "ip": "127.0.0.1",
+  "timestamp": {
+    "$date": "2025-05-10T19:27:47.525Z"
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "deviceInfo": "Win32 - Netscape",
+  "location": "本地测试",
+  "version": "ffff",
+  "createdAt": {
+    "$date": "2025-05-10T19:27:47.525Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:27:47.525Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fabc2a6cadc529c1c483e"
+  },
+  "username": "测试用户123",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "deviceInfo": "Win32 - Netscape",
+  "location": "本地测试",
+  "version": "v2.3.5",
+  "remark": "2132",
+  "timestamp": {
+    "$date": "2025-05-10T19:40:50.170Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-10T19:40:50.174Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-10T19:40:50.174Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fcf82165f0a30c573b644"
+  },
+  "username": "测试用户123",
+  "ip": "212",
+  "version": "212",
+  "remark": "21",
+  "deviceInfo": "212",
+  "timestamp": {
+    "$date": "2025-05-10T22:13:22.491Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fd054165f0a30c573b65e"
+  },
+  "username": "测试用户123",
+  "ip": "212",
+  "version": "212",
+  "remark": "21",
+  "deviceInfo": "212",
+  "timestamp": {
+    "$date": "2025-05-10T22:16:52.850Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fd062165f0a30c573b666"
+  },
+  "username": "测试用户123",
+  "ip": "212",
+  "version": "212",
+  "remark": "22222222222222222",
+  "deviceInfo": "212",
+  "timestamp": {
+    "$date": "2025-05-10T22:17:06.629Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fd3fdefb36520a834ce9c"
+  },
+  "username": "测试用户123",
+  "ip": "1",
+  "version": "4321",
+  "remark": "555",
+  "deviceInfo": "3",
+  "timestamp": {
+    "$date": "2025-05-10T22:32:29.615Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fd44cefb36520a834cea9"
+  },
+  "username": "测试用户123",
+  "ip": "1",
+  "version": "4321",
+  "remark": "5556666",
+  "deviceInfo": "3",
+  "timestamp": {
+    "$date": "2025-05-10T22:33:48.095Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fd6b70404cc7b5eca43e9"
+  },
+  "username": "测试用户123",
+  "ip": "321",
+  "version": "11111",
+  "remark": "111112222",
+  "deviceInfo": "3213",
+  "timestamp": {
+    "$date": "2025-05-10T22:44:07.962Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fd6c80404cc7b5eca43f3"
+  },
+  "username": "测试用户123",
+  "ip": "321",
+  "version": "11111",
+  "remark": "3333",
+  "deviceInfo": "3213",
+  "timestamp": {
+    "$date": "2025-05-10T22:44:24.196Z"
+  },
+  "__v": 0,
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  }
+},
+{
+  "_id": {
+    "$oid": "6820e9eb47b5017cb3082bbf"
+  },
+  "username": "测试用户123",
+  "ip": "1111",
+  "timestamp": {
+    "$date": "2025-05-11T18:18:19.189Z"
+  },
+  "version": "gggggg",
+  "remark": "gggggggg",
+  "deviceInfo": "333",
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "682105be36857f364c1cbe0a"
+  },
+  "versionNumber": "1.2.3",
+  "description": "会的话",
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  },
+  "timestamp": {
+    "$date": "2025-05-11T20:17:02.966Z"
+  },
+  "status": "published",
+  "downloadUrl": "http://localhost:3001/uploads/file-1746994622959-253399478.zip",
+  "originalFileName": "mutation-observer-demo.zip",
+  "fileExt": ".zip",
+  "fileSize": 194621,
+  "publishedBy": "Admin",
+  "createdAt": {
+    "$date": "2025-05-11T20:17:02.968Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-11T20:18:13.384Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682105db36857f364c1cbe0f"
+  },
+  "versionNumber": "1.2.5",
+  "description": "烦得很过分的话官方的",
+  "projectId": {
+    "$oid": "682031eaba8af1129bfdf62c"
+  },
+  "timestamp": {
+    "$date": "2025-05-11T20:17:31.782Z"
+  },
+  "status": "deprecated",
+  "downloadUrl": "http://localhost:3001/uploads/file-1746994651779-423624538.png",
+  "originalFileName": "logo48.png",
+  "fileExt": ".png",
+  "fileSize": 2601,
+  "publishedBy": "Admin",
+  "createdAt": {
+    "$date": "2025-05-11T20:17:31.784Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-11T20:18:11.986Z"
+  },
+  "__v": 0
+}]

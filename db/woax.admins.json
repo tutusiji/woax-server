@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "6820d9be47b5017cb3082b70"
+  },
+  "username": "admin",
+  "createdAt": {
+    "$date": "2025-05-11T17:09:18.534Z"
+  },
+  "salt": "ccd23a5e9b3c57d9a9bf582a47720529",
+  "passwordHash": "f57ccc4d576a3d0127afb65da319abd5915ae863b040c01677771de618b613100f8d7d9a182a07375484115046fe89aac136a1c2cc5bb9011bc4ee9f6e52a5f2",
+  "__v": 0,
+  "lastLogin": {
+    "$date": "2025-05-11T18:56:35.950Z"
+  }
+}]

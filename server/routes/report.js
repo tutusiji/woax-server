@@ -1,6 +1,7 @@
 const Router = require("koa-router");
 const Report = require("../models/Report");
 const mongoose = require("mongoose");
+const { verifyAdmin } = require("./admin");
 
 const router = new Router();
 
@@ -200,28 +201,68 @@ router.get("/:id", async (ctx) => {
   }
 });
 
-// 删除数据统计记录
-router.delete("/:id", async (ctx) => {
+// 删除数据统计记录 - 添加管理员权限验证
+router.delete('/:id', verifyAdmin, async (ctx) => {
   try {
-    const result = await Report.findByIdAndDelete(ctx.params.id);
-    if (!result) {
+    const id = ctx.params.id;
+    const result = await Report.findByIdAndDelete(id);
+    if (result) {
+      ctx.body = {
+        success: true,
+        message: '删除成功'
+      };
+    } else {
       ctx.status = 404;
       ctx.body = {
         success: false,
-        message: "未找到该数据统计记录",
+        message: '记录不存在'
       };
-      return;
     }
-    ctx.body = {
-      success: true,
-      message: "数据统计记录已删除",
-    };
   } catch (error) {
+    console.error('删除记录错误:', error);
     ctx.status = 500;
     ctx.body = {
       success: false,
-      message: "删除数据统计记录失败",
-      error: error.message,
+      message: '服务器错误'
+    };
+  }
+});
+
+// 自主上报 - 添加管理员权限验证
+router.post('/submit', verifyAdmin, async (ctx) => {
+  try {
+    const reportData = ctx.request.body;
+    
+    // 验证必填字段
+    if (!reportData.username || !reportData.projectId) {
+      ctx.status = 400;
+      ctx.body = {
+        success: false,
+        message: '缺少必要字段'
+      };
+      return;
+    }
+    
+    // 创建新记录
+    const newReport = new Report({
+      ...reportData,
+      timestamp: new Date(),
+      ip: ctx.request.ip
+    });
+    
+    await newReport.save();
+    
+    ctx.body = {
+      success: true,
+      message: '上报成功',
+      data: newReport
+    };
+  } catch (error) {
+    console.error('自主上报错误:', error);
+    ctx.status = 500;
+    ctx.body = {
+      success: false,
+      message: '服务器错误'
     };
   }
 });

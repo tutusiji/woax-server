@@ -39,3 +39,6 @@ npm start
 - 前端：React、React Router、Ant Design
 - 后端：Node.js、Koa.js
 - 数据库：MongoDB
+
+
+默认管理员账号：用户名 admin ，密码 admin123

@@ -15,6 +15,7 @@ import {
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
+import AuthButton from "../components/AuthButton";
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -280,7 +281,7 @@ const FeedbackPage = ({ currentProject }) => {
           <Button type="primary" size="small" onClick={() => handleViewDetails(record)}>
             查看
           </Button>
-          <Button
+          <AuthButton
             type="primary"
             danger
             size="small"
@@ -291,9 +292,10 @@ const FeedbackPage = ({ currentProject }) => {
                 onOk: () => handleDelete(record._id),
               });
             }}
+            tooltip="需要管理员权限才能删除反馈"
           >
             删除
-          </Button>
+          </AuthButton>
         </Space>
       ),
     },
@@ -310,13 +312,14 @@ const FeedbackPage = ({ currentProject }) => {
           }}
         >
           <Title level={4}>意见反馈</Title>
-          <Button
+          <AuthButton
             type="primary"
             onClick={() => setIsSubmitModalVisible(true)}
             disabled={!currentProject}
+            tooltip="需要管理员权限才能提交反馈"
           >
             提交反馈
-          </Button>
+          </AuthButton>
         </div>
 
         <Table
@@ -376,33 +379,36 @@ const FeedbackPage = ({ currentProject }) => {
               >
                 <Form.Item name="status" label="更新状态">
                   <Space>
-                    <Button
+                    <AuthButton
                       type={detailFormValues.status === "pending" ? "primary" : "default"}
                       onClick={() => {
                         form.setFieldsValue({ status: "pending" });
                         setDetailFormValues((prev) => ({ ...prev, status: "pending" }));
                       }}
+                      tooltip="需要管理员权限才能更新状态"
                     >
                       待处理
-                    </Button>
-                    <Button
+                    </AuthButton>
+                    <AuthButton
                       type={detailFormValues.status === "reviewed" ? "primary" : "default"}
                       onClick={() => {
                         form.setFieldsValue({ status: "reviewed" });
                         setDetailFormValues((prev) => ({ ...prev, status: "reviewed" }));
                       }}
+                      tooltip="需要管理员权限才能更新状态"
                     >
                       已审阅
-                    </Button>
-                    <Button
+                    </AuthButton>
+                    <AuthButton
                       type={detailFormValues.status === "resolved" ? "primary" : "default"}
                       onClick={() => {
                         form.setFieldsValue({ status: "resolved" });
                         setDetailFormValues((prev) => ({ ...prev, status: "resolved" }));
                       }}
+                      tooltip="需要管理员权限才能更新状态"
                     >
                       已解决
-                    </Button>
+                    </AuthButton>
                   </Space>
                 </Form.Item>
 
@@ -411,9 +417,9 @@ const FeedbackPage = ({ currentProject }) => {
                 </Form.Item>
 
                 <Form.Item>
-                  <Button type="primary" onClick={() => handleUpdateStatus()}>
+                  <AuthButton type="primary" onClick={() => handleUpdateStatus()} tooltip="需要管理员权限才能提交回复">
                     提交回复
-                  </Button>
+                  </AuthButton>
                 </Form.Item>
               </Form>
             </div>

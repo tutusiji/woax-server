@@ -1,10 +1,11 @@
 const Router = require('koa-router');
+const router = new Router();
+const Version = require('../models/Version');
+const mongoose = require('mongoose');
+const { verifyAdmin } = require('./admin');
 const multer = require('@koa/multer');
 const path = require('path');
 const fs = require('fs');
-const Version = require('../models/Version');
-
-const router = new Router();
 
 // 配置文件上传
 const storage = multer.diskStorage({
@@ -16,69 +17,19 @@ const storage = multer.diskStorage({
     cb(null, uploadDir);
   },
   filename: function (req, file, cb) {
-    cb(null, file.originalname);
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    const ext = path.extname(file.originalname);
+    cb(null, file.fieldname + '-' + uniqueSuffix + ext);
   }
 });
 
-const upload = multer({ 
-  storage: storage,
-  limits: {
-    fileSize: parseInt(process.env.MAX_FILE_SIZE || 10485760) // 默认10MB
-  }
-});
+const upload = multer({ storage: storage });
 
-// 获取最新版本信息
-router.get('/latest', async (ctx) => {
-  try {
-    const projectId = ctx.query.projectId;
-    
-    // 验证项目ID
-    if (!projectId) {
-      ctx.status = 400;
-      ctx.body = {
-        success: false,
-        message: "缺少项目ID参数"
-      };
-      return;
-    }
-    
-    const latestVersion = await Version.findOne({ isActive: true, projectId }).sort({ createdAt: -1 });
-    
-    if (!latestVersion) {
-      ctx.body = {
-        success: true,
-        hasNewVersion: false,
-        message: '没有可用的新版本'
-      };
-      return;
-    }
-    
-    ctx.body = {
-      success: true,
-      hasNewVersion: true,
-      data: {
-        versionNumber: latestVersion.versionNumber,
-        downloadLink: latestVersion.downloadLink,
-        releaseDate: latestVersion.releaseDate,
-        description: latestVersion.description
-      }
-    };
-  } catch (error) {
-    ctx.status = 500;
-    ctx.body = {
-      success: false,
-      message: '获取版本信息失败',
-      error: error.message
-    };
-  }
-});
-
-// 获取所有版本信息
+// 获取版本列表
 router.get('/', async (ctx) => {
   try {
-    const projectId = ctx.query.projectId;
+    const { page = 1, pageSize = 10, projectId } = ctx.query;
     
-    // 验证项目ID
     if (!projectId) {
       ctx.status = 400;
       ctx.body = {
@@ -88,17 +39,26 @@ router.get('/', async (ctx) => {
       return;
     }
     
-    const versions = await Version.find({ projectId }).sort({ createdAt: -1 });
+    const query = { projectId: new mongoose.Types.ObjectId(projectId) };
+    const total = await Version.countDocuments(query);
+    const data = await Version.find(query)
+      .sort({ timestamp: -1 })
+      .skip((page - 1) * pageSize)
+      .limit(Number(pageSize));
+      
     ctx.body = {
       success: true,
-      data: versions
+      data,
+      total,
+      page: Number(page),
+      pageSize: Number(pageSize),
     };
   } catch (error) {
     ctx.status = 500;
     ctx.body = {
       success: false,
-      message: '获取版本列表失败',
-      error: error.message
+      message: "获取版本列表失败",
+      error: error.message,
     };
   }
 });
@@ -111,84 +71,228 @@ router.get('/:id', async (ctx) => {
       ctx.status = 404;
       ctx.body = {
         success: false,
-        message: '未找到该版本信息'
+        message: "未找到该版本",
       };
       return;
     }
     ctx.body = {
       success: true,
+      data: version,
+    };
+  } catch (error) {
+    ctx.status = 500;
+    ctx.body = {
+      success: false,
+      message: "获取版本详情失败",
+      error: error.message,
+    };
+  }
+});
+
+// 发布新版本 - 添加管理员权限验证
+router.post('/publish', verifyAdmin, upload.single('file'), async (ctx) => {
+  try {
+    const { versionNumber, description, projectId, publishedBy } = ctx.request.body;
+    const file = ctx.request.file;
+    
+    if (!versionNumber || !description || !projectId) {
+      ctx.status = 400;
+      ctx.body = {
+        success: false,
+        message: "缺少必要字段"
+      };
+      // 如果已上传文件但验证失败，删除已上传的文件
+      if (file && file.path) {
+        try {
+          fs.unlinkSync(file.path);
+        } catch (err) {
+          console.error('删除文件失败:', err);
+        }
+      }
+      return;
+    }
+    
+    // 创建下载URL
+    let downloadUrl = null;
+    let originalFileName = null;
+    let fileExt = null;
+    
+    if (file) {
+      // 构建完整的下载URL
+      const host = ctx.request.header.host;
+      const protocol = ctx.request.secure ? 'https' : 'http';
+      downloadUrl = `${protocol}://${host}/uploads/${file.filename}`;
+      originalFileName = file.originalname;
+      fileExt = path.extname(file.originalname);
+    }
+    
+    const newVersion = new Version({
+      versionNumber,
+      description,
+      projectId: new mongoose.Types.ObjectId(projectId),
+      timestamp: new Date(),
+      status: 'draft',
+      downloadUrl,
+      originalFileName,
+      fileExt,
+      publishedBy: publishedBy || 'Admin',
+      fileSize: file ? file.size : null
+    });
+    
+    await newVersion.save();
+    
+    ctx.body = {
+      success: true,
+      message: "版本发布成功",
+      data: newVersion
+    };
+  } catch (error) {
+    ctx.status = 500;
+    ctx.body = {
+      success: false,
+      message: "版本发布失败",
+      error: error.message,
+    };
+  }
+});
+
+// 设置为最新版本 - 添加管理员权限验证
+router.put('/set-latest/:id', verifyAdmin, async (ctx) => {
+  try {
+    const id = ctx.params.id;
+    
+    const version = await Version.findById(id);
+    if (!version) {
+      ctx.status = 404;
+      ctx.body = {
+        success: false,
+        message: "未找到该版本"
+      };
+      return;
+    }
+    
+    // 先将所有同项目的版本状态设为非最新
+    await Version.updateMany(
+      { projectId: version.projectId, status: 'published' },
+      { status: 'deprecated' }
+    );
+    
+    // 将当前版本设为已发布（最新）
+    version.status = 'published';
+    await version.save();
+    
+    ctx.body = {
+      success: true,
+      message: "已将此版本设为最新版本",
       data: version
     };
   } catch (error) {
     ctx.status = 500;
     ctx.body = {
       success: false,
-      message: '获取版本详情失败',
-      error: error.message
+      message: "设置最新版本失败",
+      error: error.message,
     };
   }
 });
 
-// 更新版本信息
-router.put('/:id', async (ctx) => {
+// 获取最新版本信息 - 无需权限验证
+router.get('/latest/:projectId', async (ctx) => {
   try {
-    const { isActive, description } = ctx.request.body;
-    const updateData = {};
+    const { projectId } = ctx.params;
     
-    if (typeof isActive === 'boolean') {
-      updateData.isActive = isActive;
+    if (!projectId) {
+      ctx.status = 400;
+      ctx.body = {
+        success: false,
+        message: "缺少项目ID参数"
+      };
+      return;
     }
     
-    if (description) {
-      updateData.description = description;
-    }
+    // 查询状态为已发布的最新版本
+    const latestVersion = await Version.findOne({
+      projectId: new mongoose.Types.ObjectId(projectId),
+      status: 'published'
+    }).sort({ timestamp: -1 });
     
-    const updatedVersion = await Version.findByIdAndUpdate(
-      ctx.params.id,
-      updateData,
-      { new: true }
-    );
-    
-    if (!updatedVersion) {
+    if (!latestVersion) {
       ctx.status = 404;
       ctx.body = {
         success: false,
-        message: '未找到该版本信息'
+        message: "未找到已发布的版本"
       };
       return;
     }
     
     ctx.body = {
       success: true,
-      message: '更新成功',
-      data: updatedVersion
+      data: latestVersion
     };
   } catch (error) {
-    ctx.status = 400;
+    ctx.status = 500;
     ctx.body = {
       success: false,
-      message: '更新失败',
-      error: error.message
+      message: "获取最新版本失败",
+      error: error.message,
     };
   }
 });
 
-// 删除版本
-router.delete('/:id', async (ctx) => {
+// 更新版本状态 - 添加管理员权限验证
+router.put('/:id', verifyAdmin, async (ctx) => {
+  try {
+    const { status } = ctx.request.body;
+    const id = ctx.params.id;
+    
+    const version = await Version.findById(id);
+    if (!version) {
+      ctx.status = 404;
+      ctx.body = {
+        success: false,
+        message: "未找到该版本"
+      };
+      return;
+    }
+    
+    // 更新状态
+    if (status) {
+      version.status = status;
+    }
+    
+    await version.save();
+    
+    ctx.body = {
+      success: true,
+      message: "版本更新成功",
+      data: version
+    };
+  } catch (error) {
+    ctx.status = 500;
+    ctx.body = {
+      success: false,
+      message: "版本更新失败",
+      error: error.message,
+    };
+  }
+});
+
+// 删除版本 - 添加管理员权限验证
+router.delete('/:id', verifyAdmin, async (ctx) => {
   try {
     const version = await Version.findById(ctx.params.id);
     if (!version) {
       ctx.status = 404;
       ctx.body = {
         success: false,
-        message: '未找到该版本信息'
+        message: "未找到该版本",
       };
       return;
     }
     
-    // 删除文件
-    if (version.fileName) {
-      const filePath = path.join(__dirname, '../uploads', version.fileName);
+    // 如果有文件，删除文件
+    if (version.downloadUrl) {
+      const filePath = path.join(__dirname, '..', version.downloadUrl);
       if (fs.existsSync(filePath)) {
         fs.unlinkSync(filePath);
       }
@@ -199,105 +303,14 @@ router.delete('/:id', async (ctx) => {
     
     ctx.body = {
       success: true,
-      message: '删除成功'
+      message: "版本已删除",
     };
   } catch (error) {
     ctx.status = 500;
     ctx.body = {
       success: false,
-      message: '删除失败',
-      error: error.message
-    };
-  }
-});
-
-// 发布新版本
-router.post('/publish', upload.single('file'), async (ctx) => {
-  try {
-    const { versionNumber, description, publishedBy, projectId } = ctx.request.body;
-    const file = ctx.request.file;
-    
-    // 验证必填字段
-    if (!versionNumber || !description || !publishedBy || !file || !projectId) {
-      ctx.status = 400;
-      ctx.body = {
-        success: false,
-        message: '缺少必要参数'
-      };
-      return;
-    }
-    
-    // 检查版本号是否已存在
-    const existingVersion = await Version.findOne({ versionNumber, projectId });
-    if (existingVersion) {
-      ctx.status = 400;
-      ctx.body = {
-        success: false,
-        message: '该版本号已存在'
-      };
-      return;
-    }
-    
-    // 创建下载链接
-    const fileName = file.filename;
-    const fileSize = file.size;
-    const downloadLink = `/api/version/download/${fileName}`;
-    
-    // 创建新版本记录
-    const newVersion = new Version({
-      versionNumber,
-      downloadLink,
-      releaseDate: new Date(),
-      description,
-      isActive: true,
-      fileName,
-      fileSize,
-      publishedBy,
-      projectId
-    });
-    
-    // 保存到数据库
-    const savedVersion = await newVersion.save();
-    
-    ctx.status = 201;
-    ctx.body = {
-      success: true,
-      message: '新版本发布成功',
-      data: savedVersion
-    };
-  } catch (error) {
-    ctx.status = 400;
-    ctx.body = {
-      success: false,
-      message: '新版本发布失败',
-      error: error.message
-    };
-  }
-});
-
-// 下载版本文件
-router.get('/download/:filename', async (ctx) => {
-  try {
-    const fileName = ctx.params.filename;
-    const filePath = path.join(__dirname, '../uploads', fileName);
-    
-    if (!fs.existsSync(filePath)) {
-      ctx.status = 404;
-      ctx.body = {
-        success: false,
-        message: '文件不存在'
-      };
-      return;
-    }
-    
-    ctx.attachment(fileName);
-    ctx.body = fs.createReadStream(filePath);
-  } catch (error) {
-    ctx.status = 500;
-    ctx.body = {
-      success: false,
-      message: '下载失败',
-      error: error.message
+      message: "删除版本失败",
+      error: error.message,
     };
   }
 });

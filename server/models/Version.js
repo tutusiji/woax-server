@@ -4,27 +4,35 @@ const versionSchema = new mongoose.Schema({
   versionNumber: {
     type: String,
     required: true,
-    trim: true,
-    unique: true
-  },
-  downloadLink: {
-    type: String,
-    required: true,
     trim: true
-  },
-  releaseDate: {
-    type: Date,
-    default: Date.now
   },
   description: {
     type: String,
     default: ''
   },
-  isActive: {
-    type: Boolean,
-    default: true
+  projectId: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Project',
+    required: true 
   },
-  fileName: {
+  timestamp: {
+    type: Date,
+    default: Date.now
+  },
+  status: {
+    type: String,
+    enum: ['draft', 'published', 'deprecated'],
+    default: 'draft'
+  },
+  downloadUrl: {
+    type: String,
+    trim: true
+  },
+  originalFileName: {
+    type: String,
+    trim: true
+  },
+  fileExt: {
     type: String,
     trim: true
   },
@@ -34,11 +42,6 @@ const versionSchema = new mongoose.Schema({
   publishedBy: {
     type: String,
     trim: true
-  },
-  projectId: { 
-    type: mongoose.Schema.Types.ObjectId, 
-    ref: 'Project',
-    required: true 
   }
 }, { timestamps: true });
 
