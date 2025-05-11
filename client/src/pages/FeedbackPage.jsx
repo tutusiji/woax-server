@@ -19,7 +19,7 @@ import axios from "axios";
 const { Title } = Typography;
 const { TextArea } = Input;
 
-const FeedbackPage = () => {
+const FeedbackPage = ({ currentProject }) => {
   const [feedbacks, setFeedbacks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedFeedback, setSelectedFeedback] = useState(null);
@@ -41,14 +41,38 @@ const FeedbackPage = () => {
     pageSizeOptions: ["10", "20", "50", "100"],
   });
 
+  // 监听项目变化
+  useEffect(() => {
+    if (currentProject) {
+      fetchFeedbacks();
+    } else {
+      setFeedbacks([]);
+    }
+  }, [currentProject]);
+
+  // 监听项目变化事件
+  useEffect(() => {
+    const handleProjectChange = () => {
+      fetchFeedbacks();
+    };
+
+    window.addEventListener('projectChanged', handleProjectChange);
+    return () => {
+      window.removeEventListener('projectChanged', handleProjectChange);
+    };
+  }, []);
+
   // 获取意见反馈列表（带分页）
   const fetchFeedbacks = async (page = 1, pageSize = 20) => {
+    if (!currentProject) return;
+    
     setLoading(true);
     try {
       const response = await axios.get("/api/feedback", {
         params: {
           page,
           pageSize,
+          projectId: currentProject._id
         },
       });
       if (response.data.success) {
@@ -167,9 +191,17 @@ const FeedbackPage = () => {
 
   // 提交新反馈
   const handleSubmitFeedback = async () => {
+    if (!currentProject) {
+      message.error("未选择项目");
+      return;
+    }
+    
     try {
       const values = await submitForm.validateFields();
-      const response = await axios.post("/api/feedback", values);
+      const response = await axios.post("/api/feedback", {
+        ...values,
+        projectId: currentProject._id
+      });
 
       if (response.data.success) {
         message.success("反馈提交成功");
@@ -185,11 +217,6 @@ const FeedbackPage = () => {
     }
   };
 
-  // 初始加载数据
-  useEffect(() => {
-    fetchFeedbacks();
-  }, []);
-
   // 获取状态标签
   const getStatusBadge = (status) => {
     switch (status) {
@@ -200,7 +227,7 @@ const FeedbackPage = () => {
       case "resolved":
         return <Badge status="success" text="已解决" />;
       default:
-        return <Badge status="default" text="未知" />;
+        return <Badge status="default" text="未知状态" />;
     }
   };
 
@@ -210,41 +237,61 @@ const FeedbackPage = () => {
       title: "用户名",
       dataIndex: "username",
       key: "username",
+      width: 150,
     },
     {
       title: "内容",
       dataIndex: "content",
       key: "content",
       ellipsis: true,
-      render: (text) => {
-        // 移除HTML标签以纯文本形式显示
-        const plainText = text.replace(/<[^>]+>/g, "");
-        return plainText.length > 50
-          ? plainText.substring(0, 50) + "..."
-          : plainText;
-      },
+      render: (text) => (
+        <div
+          style={{
+            maxWidth: "300px",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {text}
+        </div>
+      ),
     },
     {
-      title: "时间",
+      title: "提交时间",
       dataIndex: "timestamp",
       key: "timestamp",
+      width: 180,
       render: (text) => new Date(text).toLocaleString(),
     },
     {
       title: "状态",
       dataIndex: "status",
       key: "status",
+      width: 100,
       render: (status) => getStatusBadge(status),
     },
     {
       title: "操作",
       key: "action",
+      width: 150,
       render: (_, record) => (
         <Space size="middle">
-          <Button type="primary" onClick={() => handleViewDetails(record)}>
+          <Button type="primary" size="small" onClick={() => handleViewDetails(record)}>
             查看
           </Button>
-          <Button danger onClick={() => handleDelete(record._id)}>
+          <Button
+            type="primary"
+            danger
+            size="small"
+            onClick={() => {
+              Modal.confirm({
+                title: "确认删除",
+                content: "确定要删除这条反馈吗？",
+                onOk: () => handleDelete(record._id),
+              });
+            }}
+          >
             删除
           </Button>
         </Space>
@@ -253,46 +300,46 @@ const FeedbackPage = () => {
   ];
 
   return (
-    <div >
-      <Card className="shadow-xl ">
-        <div className="flex justify-between items-center mb-4">
-          <Title level={2}>意见反馈列表</Title>
-          <Button type="primary" onClick={() => setIsSubmitModalVisible(true)}>
-            提交新反馈
+    <div>
+      <Card>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: "20px",
+          }}
+        >
+          <Title level={4}>意见反馈</Title>
+          <Button
+            type="primary"
+            onClick={() => setIsSubmitModalVisible(true)}
+            disabled={!currentProject}
+          >
+            提交反馈
           </Button>
         </div>
+
         <Table
           columns={columns}
           dataSource={feedbacks}
           rowKey="_id"
-          loading={loading}
           pagination={pagination}
+          loading={loading}
           onChange={handleTableChange}
         />
       </Card>
 
       {/* 详情弹窗 */}
       <Modal
-        title="意见反馈详情"
+        title="反馈详情"
         open={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
-        footer={[
-          <Button key="cancel" onClick={() => setIsModalVisible(false)}>
-            取消
-          </Button>,
-          <Button
-            key="submit"
-            type="primary"
-            onClick={() => handleUpdateStatus()}
-          >
-            更新
-          </Button>,
-        ]}
+        footer={null}
         width={700}
       >
         {selectedFeedback && (
-          <>
-            <Descriptions bordered column={1} className="mb-5">
+          <div>
+            <Descriptions bordered column={1}>
               <Descriptions.Item label="用户名">
                 {selectedFeedback.username}
               </Descriptions.Item>
@@ -300,147 +347,120 @@ const FeedbackPage = () => {
                 {selectedFeedback.email || "未提供"}
               </Descriptions.Item>
               <Descriptions.Item label="IP地址">
-                {selectedFeedback.ip}
+                {selectedFeedback.ip || "未记录"}
               </Descriptions.Item>
               <Descriptions.Item label="提交时间">
                 {new Date(selectedFeedback.timestamp).toLocaleString()}
               </Descriptions.Item>
               <Descriptions.Item label="反馈内容">
-                <div
-                  className="rich-text-content"
-                  dangerouslySetInnerHTML={{ __html: selectedFeedback.content }}
-                />
+                <div style={{ whiteSpace: "pre-wrap" }}>
+                  {selectedFeedback.content}
+                </div>
+              </Descriptions.Item>
+              <Descriptions.Item label="状态">
+                {getStatusBadge(selectedFeedback.status)}
               </Descriptions.Item>
             </Descriptions>
 
-            <Form
-              form={form}
-              layout="vertical"
-              initialValues={detailFormValues}
-              onValuesChange={(_, allValues) => setDetailFormValues(allValues)}
-            >
-              <Form.Item name="status" label="状态">
-                <Space.Compact>
+            <div style={{ marginTop: "20px" }}>
+              <Form
+                form={form}
+                layout="vertical"
+                initialValues={{
+                  status: selectedFeedback.status,
+                  replyInput: "",
+                }}
+                onValuesChange={(_, values) => {
+                  setDetailFormValues(values);
+                }}
+              >
+                <Form.Item name="status" label="更新状态">
                   <Space>
                     <Button
-                      type={
-                        detailFormValues.status === "pending"
-                          ? "primary"
-                          : "default"
-                      }
+                      type={detailFormValues.status === "pending" ? "primary" : "default"}
                       onClick={() => {
-                        setDetailFormValues((prev) => ({
-                          ...prev,
-                          status: "pending",
-                        }));
                         form.setFieldsValue({ status: "pending" });
-                        handleUpdateStatus("pending");
+                        setDetailFormValues((prev) => ({ ...prev, status: "pending" }));
                       }}
                     >
                       待处理
                     </Button>
                     <Button
-                      type={
-                        detailFormValues.status === "reviewed"
-                          ? "primary"
-                          : "default"
-                      }
+                      type={detailFormValues.status === "reviewed" ? "primary" : "default"}
                       onClick={() => {
-                        setDetailFormValues((prev) => ({
-                          ...prev,
-                          status: "reviewed",
-                        }));
                         form.setFieldsValue({ status: "reviewed" });
-                        handleUpdateStatus("reviewed");
+                        setDetailFormValues((prev) => ({ ...prev, status: "reviewed" }));
                       }}
                     >
                       已审阅
                     </Button>
                     <Button
-                      type={
-                        detailFormValues.status === "resolved"
-                          ? "primary"
-                          : "default"
-                      }
+                      type={detailFormValues.status === "resolved" ? "primary" : "default"}
                       onClick={() => {
-                        setDetailFormValues((prev) => ({
-                          ...prev,
-                          status: "resolved",
-                        }));
                         form.setFieldsValue({ status: "resolved" });
-                        handleUpdateStatus("resolved");
+                        setDetailFormValues((prev) => ({ ...prev, status: "resolved" }));
                       }}
                     >
                       已解决
                     </Button>
                   </Space>
-                </Space.Compact>
-              </Form.Item>
+                </Form.Item>
 
-              {/* 新增：回复记录 */}
-              <div className="mb-4">
-                <div>回复记录：</div>
-                <div className="max-h-36 overflow-y-auto bg-gray-100 p-2 border border-gray-200 rounded">
-                  {Array.isArray(selectedFeedback.replyHistory) &&
-                  selectedFeedback.replyHistory.length > 0 ? (
-                    selectedFeedback.replyHistory.map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="mb-2 border-b border-dashed border-gray-200 pb-1"
-                      >
-                        <div>
-                          <span className="text-gray-700">
-                            {item.admin ? `${item.admin}：` : ""}
-                            {item.content}
+                <Form.Item name="replyInput" label="回复内容">
+                  <ReactQuill theme="snow" style={{ height: "150px" }} />
+                </Form.Item>
+
+                <Form.Item>
+                  <Button type="primary" onClick={() => handleUpdateStatus()}>
+                    提交回复
+                  </Button>
+                </Form.Item>
+              </Form>
+            </div>
+
+            {/* 回复历史 */}
+            {selectedFeedback.replyHistory &&
+              selectedFeedback.replyHistory.length > 0 && (
+                <div style={{ marginTop: "20px" }}>
+                  <Title level={5}>回复历史</Title>
+                  {selectedFeedback.replyHistory.map((reply, index) => (
+                    <Card
+                      key={index}
+                      style={{ marginBottom: "10px" }}
+                      size="small"
+                    >
+                      <div>
+                        <div
+                          dangerouslySetInnerHTML={{ __html: reply.content }}
+                        />
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            marginTop: "10px",
+                            color: "#888",
+                          }}
+                        >
+                          <span>{reply.admin}</span>
+                          <span>
+                            {new Date(reply.time).toLocaleString()}
                           </span>
                         </div>
-                        <div className="text-xs text-gray-400">
-                          {item.time
-                            ? new Date(item.time).toLocaleString()
-                            : ""}
-                        </div>
                       </div>
-                    ))
-                  ) : (
-                    <span className="text-gray-400">暂无回复记录</span>
-                  )}
+                    </Card>
+                  ))}
                 </div>
-              </div>
-
-              <Form.Item name="replyInput" label="回复输入区">
-                <TextArea
-                  rows={4}
-                  placeholder="输入对此反馈的回复"
-                  value={detailFormValues.replyInput}
-                  onChange={(e) => {
-                    setDetailFormValues((prev) => ({
-                      ...prev,
-                      replyInput: e.target.value,
-                    }));
-                    form.setFieldsValue({ replyInput: e.target.value });
-                  }}
-                  className="resize-none"
-                />
-              </Form.Item>
-            </Form>
-          </>
+              )}
+          </div>
         )}
       </Modal>
 
-      {/* 提交新反馈弹窗 */}
+      {/* 提交反馈弹窗 */}
       <Modal
-        title="提交新反馈"
+        title="提交反馈"
         open={isSubmitModalVisible}
+        onOk={handleSubmitFeedback}
         onCancel={() => setIsSubmitModalVisible(false)}
-        footer={[
-          <Button key="cancel" onClick={() => setIsSubmitModalVisible(false)}>
-            取消
-          </Button>,
-          <Button key="submit" type="primary" onClick={handleSubmitFeedback}>
-            提交
-          </Button>,
-        ]}
-        width={700}
       >
         <Form form={submitForm} layout="vertical">
           <Form.Item
@@ -448,25 +468,17 @@ const FeedbackPage = () => {
             label="用户名"
             rules={[{ required: true, message: "请输入用户名" }]}
           >
-            <Input placeholder="请输入您的用户名" />
+            <Input />
           </Form.Item>
-          <Form.Item
-            name="email"
-            label="邮箱"
-            rules={[{ type: "email", message: "请输入有效的邮箱地址" }]}
-          >
-            <Input placeholder="请输入您的邮箱（选填）" />
+          <Form.Item name="email" label="邮箱">
+            <Input />
           </Form.Item>
           <Form.Item
             name="content"
             label="反馈内容"
             rules={[{ required: true, message: "请输入反馈内容" }]}
           >
-            <ReactQuill
-              theme="snow"
-              placeholder="请输入您的反馈内容..."
-              className="h-52 mb-12"
-            />
+            <TextArea rows={4} />
           </Form.Item>
         </Form>
       </Modal>

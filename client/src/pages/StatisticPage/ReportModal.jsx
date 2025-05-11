@@ -4,12 +4,10 @@ import { Modal, Table } from 'antd';
 const ReportModal = ({
   visible,
   username,
-  records = [],
-  total = 0,
-  current = 1,
-  pageSize = 10,
+  data = [], // 修改为data以匹配StatisticPage中传递的props
+  pagination = {}, // 修改为接收完整的pagination对象
   loading = false,
-  onCancel,
+  onClose, // 修改为onClose以匹配StatisticPage中传递的props
   onPageChange,
   type,
 }) => {
@@ -25,24 +23,22 @@ const ReportModal = ({
       <Modal
         open={visible}
         title={`用户 ${username} 的所有上报记录`}
-        onCancel={onCancel}
+        onCancel={onClose} // 修改为onClose以匹配StatisticPage中传递的props
         footer={null}
         width={800}
       >
         <Table
           columns={columns}
-          dataSource={records}
+          dataSource={data} // 修改为data以匹配StatisticPage中传递的props
           rowKey="_id"
           loading={loading}
           pagination={{
-            current,
-            pageSize,
-            total,
+            ...pagination, // 使用传入的完整pagination对象
             showSizeChanger: true,
             pageSizeOptions: [10, 20, 50, 100],
             showTotal: t => `共 ${t} 条记录`,
-            onChange: onPageChange,
-            onShowSizeChange: onPageChange,
+            onChange: (page, pageSize) => onPageChange(page, pageSize), // 确保正确传递参数
+            onShowSizeChange: (current, size) => onPageChange(current, size), // 确保正确传递参数
           }}
           size="small"
         />

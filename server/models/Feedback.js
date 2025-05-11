@@ -39,6 +39,11 @@ const feedbackSchema = new mongoose.Schema(
         admin: { type: String, default: "管理员" },
       },
     ],
+    projectId: { 
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: 'Project',
+      required: true 
+    },
   },
   { timestamps: true }
 );

@@ -10,12 +10,26 @@ router.get("/", async (ctx) => {
     const page = parseInt(ctx.query.page) || 1;
     const pageSize = parseInt(ctx.query.pageSize) || 20;
     const skip = (page - 1) * pageSize;
+    const projectId = ctx.query.projectId;
+
+    // 验证项目ID
+    if (!projectId) {
+      ctx.status = 400;
+      ctx.body = {
+        success: false,
+        message: "缺少项目ID参数",
+      };
+      return;
+    }
+
+    // 查询条件
+    const query = { projectId };
 
     // 查询总数
-    const total = await Feedback.countDocuments();
+    const total = await Feedback.countDocuments(query);
 
     // 分页查询
-    const feedbacks = await Feedback.find()
+    const feedbacks = await Feedback.find(query)
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(pageSize);
@@ -67,12 +81,22 @@ router.get("/:id", async (ctx) => {
 // 提交新的意见反馈
 router.post("/", async (ctx) => {
   try {
-    let { username, content, email, ip } = ctx.request.body;
+    let { username, content, email, ip, projectId } = ctx.request.body;
     // 去除字符串字段两端空格
     username = typeof username === "string" ? username.trim() : username;
     content = typeof content === "string" ? content.trim() : content;
     email = typeof email === "string" ? email.trim() : email;
     ip = typeof ip === "string" ? ip.trim() : ip;
+
+    // 验证项目ID
+    if (!projectId) {
+      ctx.status = 400;
+      ctx.body = {
+        success: false,
+        message: "缺少项目ID参数",
+      };
+      return;
+    }
 
     // 创建新的意见反馈
     const newFeedback = new Feedback({
@@ -80,6 +104,7 @@ router.post("/", async (ctx) => {
       content,
       email,
       ip,
+      projectId,
     });
 
     // 保存到数据库
@@ -104,34 +129,35 @@ router.post("/", async (ctx) => {
 // 更新意见反馈状态
 router.put("/:id", async (ctx) => {
   try {
-    let { status, replyInput } = ctx.request.body;
-    // 去除字符串字段两端空格
-    status = typeof status === "string" ? status.trim() : status;
-    replyInput =
-      typeof replyInput === "string" ? replyInput.trim() : replyInput;
+    const { status, replyInput } = ctx.request.body;
+    const updateData = {};
 
-    // 构建更新对象
-    const updateObj = {};
-    if (status) updateObj.status = status;
-    if (typeof replyInput === "string" && replyInput) {
-      // 追加到回复记录
-      updateObj.$push = {
-        replyHistory: {
-          content: replyInput,
-          time: new Date(),
-          admin: ctx.state.user?.username || "管理员",
-        },
-      };
-      updateObj.replyInput = replyInput; // 可选：保留最新输入
+    // 更新状态
+    if (status) {
+      updateData.status = status;
     }
 
-    // 如果没有回复，只更新状态
-    const updateQuery =
-      Object.keys(updateObj).length > 0 ? updateObj : { status };
+    // 添加回复
+    if (replyInput && typeof replyInput === "string" && replyInput.trim()) {
+      const replyItem = {
+        content: replyInput.trim(),
+        time: new Date(),
+        admin: "管理员", // 可以根据实际登录用户替换
+      };
 
+      // 使用 $push 操作符将新回复添加到 replyHistory 数组的开头
+      updateData.$push = {
+        replyHistory: {
+          $each: [replyItem],
+          $position: 0,
+        },
+      };
+    }
+
+    // 更新文档
     const updatedFeedback = await Feedback.findByIdAndUpdate(
       ctx.params.id,
-      updateQuery,
+      updateData,
       { new: true }
     );
 
@@ -146,14 +172,14 @@ router.put("/:id", async (ctx) => {
 
     ctx.body = {
       success: true,
-      message: "意见反馈状态已更新",
+      message: "更新成功",
       data: updatedFeedback,
     };
   } catch (error) {
-    ctx.status = 500;
+    ctx.status = 400;
     ctx.body = {
       success: false,
-      message: "更新意见反馈状态失败",
+      message: "更新失败",
       error: error.message,
     };
   }
@@ -162,8 +188,8 @@ router.put("/:id", async (ctx) => {
 // 删除意见反馈
 router.delete("/:id", async (ctx) => {
   try {
-    const feedback = await Feedback.findByIdAndDelete(ctx.params.id);
-    if (!feedback) {
+    const deletedFeedback = await Feedback.findByIdAndDelete(ctx.params.id);
+    if (!deletedFeedback) {
       ctx.status = 404;
       ctx.body = {
         success: false,
@@ -173,13 +199,13 @@ router.delete("/:id", async (ctx) => {
     }
     ctx.body = {
       success: true,
-      message: "意见反馈已删除",
+      message: "删除成功",
     };
   } catch (error) {
     ctx.status = 500;
     ctx.body = {
       success: false,
-      message: "删除意见反馈失败",
+      message: "删除失败",
       error: error.message,
     };
   }

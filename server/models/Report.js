@@ -8,6 +8,11 @@ const reportSchema = new mongoose.Schema(
     version: String,
     remark: String,
     deviceInfo: String,
+    projectId: { 
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: 'Project',
+      required: true 
+    },
     // ...如有其它字段...
   },
   { collection: "statistics" }

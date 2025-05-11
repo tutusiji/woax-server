@@ -34,6 +34,11 @@ const versionSchema = new mongoose.Schema({
   publishedBy: {
     type: String,
     trim: true
+  },
+  projectId: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Project',
+    required: true 
   }
 }, { timestamps: true });
 

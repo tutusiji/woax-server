@@ -3,12 +3,12 @@ import { Card, Button, Typography, Row, Col, message } from 'antd';
 import axios from 'axios';
 import ChartPanel from './ChartPanel';
 import DataTable from './DataTable';
-import ReportModal from './ReportModal';
 import ReportFormModal from './ReportFormModal';
+import ReportModal from './ReportModal';
 
 const { Title } = Typography;
 
-const StatisticPage = () => {
+const StatisticPage = ({ currentProject }) => {
   const [reports, setReports] = useState([]); // 每用户最后一次
   const [allReports, setAllReports] = useState([]); // 全量数据
   const [pagination, setPagination] = useState({
@@ -29,12 +29,42 @@ const StatisticPage = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isReportModalVisible, setIsReportModalVisible] = useState(false);
 
+  // 监听项目变化
+  useEffect(() => {
+    if (currentProject) {
+      fetchReportsPage();
+      fetchReportsAll();
+    } else {
+      setReports([]);
+      setAllReports([]);
+    }
+  }, [currentProject]);
+
+  // 监听项目变化事件
+  useEffect(() => {
+    const handleProjectChange = () => {
+      fetchReportsPage();
+      fetchReportsAll();
+    };
+
+    window.addEventListener('projectChanged', handleProjectChange);
+    return () => {
+      window.removeEventListener('projectChanged', handleProjectChange);
+    };
+  }, []);
+
   // 聚合分页列表
   const fetchReportsPage = async (page = 1, pageSize = 20) => {
+    if (!currentProject) return;
+
     setLoading(true);
     setReports([]);
     try {
-      const response = await axios.post('/api/report/getReportData', { pageCurrent: page, pageSize });
+      const response = await axios.post('/api/report/getReportData', {
+        pageCurrent: page,
+        pageSize,
+        projectId: currentProject._id
+      });
       if (response.data.success) {
         setReports(response.data.data);
         setPagination({
@@ -52,12 +82,18 @@ const StatisticPage = () => {
       setLoading(false);
     }
   };
-  
+
   // 全量数据（用于图表）
   const fetchReportsAll = async () => {
+    if (!currentProject) return;
+
     setChartLoading(true);
     try {
-      const response = await axios.post('/api/report/getReportData', { pageCurrent: 1, pageSize: 100000 });
+      const response = await axios.post('/api/report/getReportData', {
+        pageCurrent: 1,
+        pageSize: 100000,
+        projectId: currentProject._id
+      });
       if (response.data.success) {
         setAllReports(response.data.data);
       } else {
@@ -70,7 +106,7 @@ const StatisticPage = () => {
       setChartLoading(false);
     }
   };
-  
+
   // 删除记录
   const handleDelete = async (id) => {
     try {
@@ -89,10 +125,16 @@ const StatisticPage = () => {
 
   // 获取用户所有记录（分页）
   const fetchUserRecords = async (username, page = 1, pageSize = 10) => {
+    if (!currentProject) return;
+
     setUserRecordsLoading(true);
     try {
       const response = await axios.get(`/api/report/user/${encodeURIComponent(username)}`, {
-        params: { page, pageSize }
+        params: {
+          page,
+          pageSize,
+          projectId: currentProject._id
+        }
       });
       if (response.data.success) {
         setUserRecords(response.data.data);
@@ -103,97 +145,108 @@ const StatisticPage = () => {
         message.error('获取用户记录失败');
       }
     } catch (error) {
+      console.error('获取用户记录错误:', error);
       message.error('获取用户记录失败');
     } finally {
       setUserRecordsLoading(false);
     }
   };
 
-  // 查看详情
-  const handleViewDetails = (record) => {
-    setSelectedUser(record.username);
-    fetchUserRecords(record.username, 1, 10);
+  // 查看用户详情
+  const handleViewUser = (username) => {
+    setSelectedUser(username);
+    fetchUserRecords(username);
     setIsModalVisible(true);
   };
 
-  
-  // 显示上报弹窗
-  const showReportModal = () => {
+  // 处理表格分页变化
+  const handleTableChange = (pagination) => {
+    fetchReportsPage(pagination.current, pagination.pageSize);
+  };
+
+  // 处理用户记录分页变化
+  const handleUserRecordsChange = (page, pageSize) => {
+    fetchUserRecords(selectedUser, page, pageSize);
+  };
+
+  // 关闭用户详情弹窗
+  const handleModalClose = () => {
+    setIsModalVisible(false);
+    setSelectedUser(null);
+    setUserRecords([]);
+  };
+
+  // 打开自主上报弹窗
+  const handleOpenReportModal = () => {
     setIsReportModalVisible(true);
   };
 
-  // 关闭上报弹窗
-  const handleReportCancel = () => {
+  // 关闭自主上报弹窗
+  const handleCloseReportModal = () => {
     setIsReportModalVisible(false);
   };
 
-  // 提交上报数据成功后的回调
+  // 自主上报成功回调
   const handleReportSuccess = () => {
     setIsReportModalVisible(false);
-    fetchReportsPage(1, pagination.pageSize); // 重新加载数据，重置到第一页
-    fetchReportsAll(); // 上报后刷新图表
-  };
-
-  useEffect(() => {
-    setLoading(true);
-    fetchReportsPage(1, pagination.pageSize);
+    fetchReportsPage();
     fetchReportsAll();
-    // eslint-disable-next-line
-  }, []);
+    message.success('上报成功');
+  };
 
   return (
     <div>
-      <Card className="shadow-xl mb-4">
-        <div className="flex justify-between items-center mb-4">
-          <Title level={2}>数据统计分析</Title>
-          <Button type="primary" onClick={showReportModal}>自主上报数据</Button>
+
+      <Card>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+          <Title level={4} style={{ margin: 0 }}>数据统计</Title>
+          <Button type="primary" onClick={handleOpenReportModal}>自主上报</Button>
         </div>
-        
-        <Row gutter={[16, 16]}>
-          {/* 左侧图表区域 */}
-          <Col xs={24} lg={8}>
-            <ChartPanel reports={allReports} loading={chartLoading} />
+        <Row gutter={[16, 16]} style={{ marginBottom: '20px' }}>
+          <Col span={8}>
+            <ChartPanel data={allReports} loading={chartLoading} />
           </Col>
-          
-          {/* 右侧表格区域 */}
-          <Col xs={24} lg={16}>
-            <DataTable 
-              reports={reports} 
-              loading={loading} 
-              onView={handleViewDetails} 
-              onDelete={handleDelete}
-              onPageChange={(page, pageSize) => {
-                setLoading(true);
-                fetchReportsPage(page, pageSize);
-              }}
-              total={pagination.total}
-              current={pagination.current}
-              pageSize={pagination.pageSize}
-            />
+          <Col span={16}>
+            <Card title="数据记录">
+              <DataTable
+                data={reports}
+                loading={loading}
+                pagination={pagination}
+                onTableChange={handleTableChange}
+                onView={handleViewUser}
+                onDelete={handleDelete}
+              />
+            </Card>
           </Col>
         </Row>
       </Card>
 
-      {/* 详情弹窗 */}
-      <ReportModal 
+      <Row gutter={[16, 16]}>
+
+      </Row>
+
+      {/* 用户详情弹窗 */}
+      <ReportModal
         visible={isModalVisible}
         username={selectedUser}
-        records={userRecords}
-        total={userRecordsTotal}
-        current={userRecordsPage}
-        pageSize={userRecordsPageSize}
+        data={userRecords}
         loading={userRecordsLoading}
-        onCancel={() => setIsModalVisible(false)}
-        onPageChange={(page, pageSize) => fetchUserRecords(selectedUser, page, pageSize)}
+        pagination={{
+          current: userRecordsPage,
+          pageSize: userRecordsPageSize,
+          total: userRecordsTotal
+        }}
+        onPageChange={handleUserRecordsChange}
+        onClose={handleModalClose}
         type="userRecords"
       />
 
       {/* 自主上报弹窗 */}
-      <ReportFormModal 
-        visible={isReportModalVisible} 
-        onCancel={handleReportCancel} 
+      <ReportFormModal
+        visible={isReportModalVisible}
+        onCancel={handleCloseReportModal}
         onSuccess={handleReportSuccess}
-        type="report"
+        projectId={currentProject?._id}
       />
     </div>
   );

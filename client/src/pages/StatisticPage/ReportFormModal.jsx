@@ -1,29 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Modal, Form, Input, Button, message } from 'antd';
 import axios from 'axios';
 
-const ReportFormModal = ({ visible, onCancel, onSuccess }) => {
+const ReportFormModal = ({ visible, onCancel, onSuccess, projectId }) => {
   const [form] = Form.useForm();
 
+  // 当弹窗关闭时重置表单
+  useEffect(() => {
+    if (!visible) {
+      form.resetFields();
+    }
+  }, [visible, form]);
+
   const handleOk = async () => {
+    if (!projectId) {
+      message.error('未选择项目');
+      return;
+    }
+
     try {
       const values = await form.validateFields();
-      const response = await axios.post('/api/report/addReport', values);
+      const response = await axios.post('/api/report/addReport', {
+        ...values,
+        projectId
+      });
       if (response.data.success) {
         message.success('上报成功');
+        form.resetFields();
         onSuccess();
       } else {
         message.error('上报失败');
       }
     } catch (error) {
       console.error('上报错误:', error);
-      message.error('上报失败');
+      message.error('上报失败: ' + (error.response?.data?.message || error.message));
     }
   };
 
   return (
     <Modal
-      visible={visible}
+      open={visible}
       title="自主上报数据"
       onCancel={onCancel}
       footer={null}

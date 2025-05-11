@@ -5,28 +5,28 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 // 颜色配置
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'];
 
-const ChartPanel = ({ reports, loading }) => {
+const ChartPanel = ({ data, loading }) => {
   // 准备图表数据
   const prepareChartData = () => {
-    if (!reports || reports.length === 0) return { barData: [], lineData: [], pieData: [] };
+    if (!data || data.length === 0) return { barData: [], lineData: [], pieData: [] };
     
     // 按版本号分组统计数量
     const versionCount = {};
-    reports.forEach(report => {
+    data.forEach(report => {
       const version = report.version || '未知版本';
       versionCount[version] = (versionCount[version] || 0) + 1;
     });
     
     // 按日期分组统计数量
     const dateCount = {};
-    reports.forEach(report => {
+    data.forEach(report => {
       const date = new Date(report.timestamp).toLocaleDateString();
       dateCount[date] = (dateCount[date] || 0) + 1;
     });
     
     // 按设备信息分组
     const deviceCount = {};
-    reports.forEach(report => {
+    data.forEach(report => {
       const device = report.deviceInfo?.split(' - ')[0] || '未知设备';
       deviceCount[device] = (deviceCount[device] || 0) + 1;
     });
@@ -56,7 +56,7 @@ const ChartPanel = ({ reports, loading }) => {
     <div className="charts-container">
       {/* 版本分布柱状图 */}
       <Card className="mb-4" title="版本分布统计" size="small">
-        {reports.length > 0 ? (
+        {data && data.length > 0 ? (
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={barData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -69,14 +69,14 @@ const ChartPanel = ({ reports, loading }) => {
           </ResponsiveContainer>
         ) : (
           <div className="flex justify-center items-center h-48">
-            <Spin tip="加载中" />
+            <Spin />
           </div>
         )}
       </Card>
       
       {/* 时间趋势折线图 */}
       <Card className="mb-4" title="时间趋势分析" size="small">
-        {reports.length > 0 ? (
+        {data && data.length > 0 ? (
           <ResponsiveContainer width="100%" height={200}>
             <LineChart data={lineData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -89,15 +89,15 @@ const ChartPanel = ({ reports, loading }) => {
           </ResponsiveContainer>
         ) : (
           <div className="flex justify-center items-center h-48">
-            <Spin tip="加载中" />
+            <Spin />
           </div>
         )}
       </Card>
       
       {/* 设备分布饼图 */}
       <Card title="设备分布统计" size="small">
-        {reports.length > 0 ? (
-          <ResponsiveContainer width="100%" height={200}>
+        {data && data.length > 0 ? (
+          <ResponsiveContainer width="100%" height={260}>
             <PieChart>
               <Pie
                 data={pieData}
@@ -118,7 +118,7 @@ const ChartPanel = ({ reports, loading }) => {
           </ResponsiveContainer>
         ) : (
           <div className="flex justify-center items-center h-48">
-            <Spin tip="加载中" />
+            <Spin />
           </div>
         )}
       </Card>

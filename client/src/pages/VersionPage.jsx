@@ -7,7 +7,7 @@ const { Title } = Typography;
 const { TextArea } = Input;
 const { Dragger } = Upload;
 
-const VersionPage = () => {
+const VersionPage = ({ currentProject }) => {
   const [versions, setVersions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedVersion, setSelectedVersion] = useState(null);
@@ -17,11 +17,38 @@ const VersionPage = () => {
   const [uploadForm] = Form.useForm();
   const [fileList, setFileList] = useState([]);
 
+  // 监听项目变化
+  useEffect(() => {
+    if (currentProject) {
+      fetchVersions();
+    } else {
+      setVersions([]);
+    }
+  }, [currentProject]);
+
+  // 监听项目变化事件
+  useEffect(() => {
+    const handleProjectChange = () => {
+      fetchVersions();
+    };
+
+    window.addEventListener('projectChanged', handleProjectChange);
+    return () => {
+      window.removeEventListener('projectChanged', handleProjectChange);
+    };
+  }, []);
+
   // 获取版本列表
   const fetchVersions = async () => {
+    if (!currentProject) return;
+    
     setLoading(true);
     try {
-      const response = await axios.get('/api/version');
+      const response = await axios.get('/api/version', {
+        params: {
+          projectId: currentProject._id
+        }
+      });
       if (response.data.success) {
         setVersions(response.data.data);
       } else {
@@ -82,6 +109,11 @@ const VersionPage = () => {
 
   // 上传新版本
   const handleUploadVersion = async () => {
+    if (!currentProject) {
+      message.error('未选择项目');
+      return;
+    }
+    
     try {
       const values = await uploadForm.validateFields();
       if (!values.versionNumber || !values.description || !values.publishedBy) {
@@ -97,6 +129,8 @@ const VersionPage = () => {
       formData.append('description', values.description);
       formData.append('publishedBy', values.publishedBy);
       formData.append('file', fileList[0].originFileObj);
+      formData.append('projectId', currentProject._id);
+      
       const response = await axios.post('/api/version/publish', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -128,11 +162,6 @@ const VersionPage = () => {
     },
     fileList,
   };
-
-  // 初始加载数据
-  useEffect(() => {
-    fetchVersions();
-  }, []);
 
   // 格式化文件大小
   const formatFileSize = (bytes) => {
@@ -191,14 +220,19 @@ const VersionPage = () => {
       <Card className="shadow-xl ">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
           <Title level={2}>版本更新管理</Title>
-          <Button type="primary" onClick={() => setIsUploadModalVisible(true)}>发布新版本</Button>
+          <Button 
+            type="primary" 
+            onClick={() => setIsUploadModalVisible(true)}
+            disabled={!currentProject}
+          >
+            发布新版本
+          </Button>
         </div>
         <Table 
           columns={columns} 
           dataSource={versions} 
           rowKey="_id" 
           loading={loading}
-          pagination={{ pageSize: 10 }}
         />
       </Card>
 
@@ -206,37 +240,37 @@ const VersionPage = () => {
       <Modal
         title="版本详情"
         open={isModalVisible}
+        onOk={handleUpdateVersion}
         onCancel={() => setIsModalVisible(false)}
-        footer={[
-          <Button key="cancel" onClick={() => setIsModalVisible(false)}>取消</Button>,
-          <Button key="submit" type="primary" onClick={handleUpdateVersion}>更新</Button>
-        ]}
-        width={700}
       >
         {selectedVersion && (
-          <>
-            <Descriptions bordered column={1} style={{ marginBottom: 20 }}>
+          <div>
+            <Descriptions bordered column={1}>
               <Descriptions.Item label="版本号">{selectedVersion.versionNumber}</Descriptions.Item>
               <Descriptions.Item label="发布日期">{new Date(selectedVersion.releaseDate).toLocaleString()}</Descriptions.Item>
               <Descriptions.Item label="文件名">{selectedVersion.fileName}</Descriptions.Item>
               <Descriptions.Item label="文件大小">{formatFileSize(selectedVersion.fileSize)}</Descriptions.Item>
+              <Descriptions.Item label="发布者">{selectedVersion.publishedBy}</Descriptions.Item>
               <Descriptions.Item label="下载链接">
                 <a href={selectedVersion.downloadLink} target="_blank" rel="noopener noreferrer">
                   {selectedVersion.downloadLink}
                 </a>
               </Descriptions.Item>
-              <Descriptions.Item label="发布者">{selectedVersion.publishedBy}</Descriptions.Item>
             </Descriptions>
-            
-            <Form form={form} layout="vertical">
+
+            <Form
+              form={form}
+              layout="vertical"
+              style={{ marginTop: 16 }}
+            >
               <Form.Item name="isActive" label="激活状态" valuePropName="checked">
                 <Switch checkedChildren="激活" unCheckedChildren="未激活" />
               </Form.Item>
               <Form.Item name="description" label="版本描述">
-                <TextArea rows={4} placeholder="输入版本描述" />
+                <TextArea rows={4} />
               </Form.Item>
             </Form>
-          </>
+          </div>
         )}
       </Modal>
 
@@ -244,45 +278,39 @@ const VersionPage = () => {
       <Modal
         title="发布新版本"
         open={isUploadModalVisible}
+        onOk={handleUploadVersion}
         onCancel={() => setIsUploadModalVisible(false)}
-        footer={[
-          <Button key="cancel" onClick={() => setIsUploadModalVisible(false)}>取消</Button>,
-          <Button key="submit" type="primary" onClick={handleUploadVersion}>发布</Button>
-        ]}
         width={700}
       >
-        <Form form={uploadForm} layout="vertical" className="version-form">
-          <Form.Item 
-            name="versionNumber" 
-            label="版本号" 
+        <Form form={uploadForm} layout="vertical">
+          <Form.Item
+            name="versionNumber"
+            label="版本号"
             rules={[{ required: true, message: '请输入版本号' }]}
           >
-            <Input placeholder="请输入版本号，例如：1.0.0" />
+            <Input placeholder="例如: 1.0.0" />
           </Form.Item>
-          <Form.Item 
-            name="publishedBy" 
+          <Form.Item
+            name="publishedBy"
             label="发布者"
             rules={[{ required: true, message: '请输入发布者' }]}
           >
-            <Input placeholder="请输入发布者姓名" />
+            <Input />
           </Form.Item>
-          <Form.Item 
-            name="description" 
-            label="版本描述" 
+          <Form.Item
+            name="description"
+            label="版本描述"
             rules={[{ required: true, message: '请输入版本描述' }]}
           >
-            <TextArea rows={4} placeholder="请输入版本描述，包括新功能、修复的问题等" />
+            <TextArea rows={4} placeholder="请输入此版本的更新内容、修复的问题等信息" />
           </Form.Item>
-          <Form.Item 
-            label="上传安装包"
-            rules={[{ required: true, message: '请上传安装包文件' }]}
-          >
-            <Dragger {...uploadProps} className="upload-area">
+          <Form.Item label="上传安装包">
+            <Dragger {...uploadProps}>
               <p className="ant-upload-drag-icon">
                 <InboxOutlined />
               </p>
               <p className="ant-upload-text">点击或拖拽文件到此区域上传</p>
-              <p className="ant-upload-hint">支持单个文件上传，请上传应用安装包</p>
+              <p className="ant-upload-hint">支持单个文件上传，请上传安装包文件</p>
             </Dragger>
           </Form.Item>
         </Form>

@@ -11,6 +11,7 @@ require('dotenv').config();
 const reportRoutes = require('./routes/report');
 const feedbackRoutes = require('./routes/feedback');
 const versionRoutes = require('./routes/version');
+const projectRoutes = require('./routes/project');
 
 // 创建Koa应用实例
 const app = new Koa();
@@ -46,6 +47,7 @@ app.use(async (ctx, next) => {
 router.use('/api/report', reportRoutes.routes());
 router.use('/api/feedback', feedbackRoutes.routes());
 router.use('/api/version', versionRoutes.routes());
+router.use('/api/projects', projectRoutes.routes());
 
 // 注册路由
 app.use(router.routes()).use(router.allowedMethods());
