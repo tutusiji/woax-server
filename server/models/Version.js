@@ -42,6 +42,20 @@ const versionSchema = new mongoose.Schema({
   publishedBy: {
     type: String,
     trim: true
+  },
+  updateType: {
+    type: String,
+    enum: ['force', 'active', 'passive'],
+    default: 'passive',
+    trim: true
+  },
+  descriptionFileUrl: {
+    type: String,
+    trim: true
+  },
+  descriptionFileName: {
+    type: String,
+    trim: true
   }
 }, { timestamps: true });
 

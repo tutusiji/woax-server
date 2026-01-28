@@ -12,7 +12,7 @@ export default defineConfig({
     extensions: ['.js', '.jsx', '.json']
   },
   server: {
-    port: 3000,
+    port: 3600,
     proxy: {
       '/api': {
         target: 'http://localhost:3001',

@@ -1,0 +1,8 @@
+version: 1.1.5
+files:
+  - url: WoaApp-1.1.5-setup.exe
+    sha512: DWgvRdFLo3hIv7PgBB4eZRFBpyFdBsDJxn1N3KFpMcXBZ3dJdgZU6dRCL/rK/f++HXwVYJBVI2bxTXLRQ0M9Eg==
+    size: 83974246
+path: WoaApp-1.1.5-setup.exe
+sha512: DWgvRdFLo3hIv7PgBB4eZRFBpyFdBsDJxn1N3KFpMcXBZ3dJdgZU6dRCL/rK/f++HXwVYJBVI2bxTXLRQ0M9Eg==
+releaseDate: '2025-07-26T14:29:36.432Z'

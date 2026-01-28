@@ -1,0 +1,37 @@
+# latest.yml 示例文件
+# 这是一个用于自动更新检查的版本描述文件
+
+# 版本信息
+version: 1.0.0
+releaseDate: '2025-07-26'
+
+# 文件信息
+files:
+  - url: https://example.com/downloads/app-1.0.0.exe
+    sha512: 'sha512hash值'
+    size: 52428800
+    blockMapSize: 55876
+
+# 更新信息
+path: app-1.0.0.exe
+sha512: 'sha512hash值'
+releaseDate: '2025-07-26T10:00:00.000Z'
+
+# 发布说明
+releaseNotes: |
+  ## 版本 1.0.0 更新内容
+  
+  ### 新功能
+  - 添加了用户管理功能
+  - 新增深色主题支持
+  
+  ### 改进
+  - 优化了启动速度
+  - 改进了用户界面
+  
+  ### 修复
+  - 修复了已知的崩溃问题
+  - 解决了内存泄漏问题
+
+# 更新策略
+updateType: passive  # passive | active | force
